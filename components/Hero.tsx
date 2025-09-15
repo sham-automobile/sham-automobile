@@ -3,8 +3,16 @@ import { ArrowRight, Car, DollarSign } from 'lucide-react'
 
 export default function Hero() {
   return (
-    <section className="relative gradient-hero text-white overflow-hidden">
-      {/* Background Pattern */}
+    <section className="relative gradient-hero text-white overflow-hidden h-[calc(100vh-100px)]">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+        style={{
+          backgroundImage: 'url(/images/img2.jpg)'
+        }}
+      />
+      
+      {/* Background Overlay */}
       <div className="absolute inset-0 bg-black/10">
         <div className="absolute inset-0 bg-gradient-to-br from-primary-800/20 to-primary-900/30" />
       </div>

@@ -1,14 +1,16 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { Send, CheckCircle } from 'lucide-react'
 import toast from 'react-hot-toast'
 import { ContactFormData } from '@/types'
+import { initEmailJS, sendContactEmail, validateEmailJSConfig } from '@/lib/emailjs'
 
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [emailJSReady, setEmailJSReady] = useState(false)
   
   const {
     register,
@@ -17,18 +19,36 @@ export default function ContactForm() {
     formState: { errors },
   } = useForm<ContactFormData>()
 
+  // EmailJS initialisieren
+  useEffect(() => {
+    const isConfigValid = validateEmailJSConfig()
+    if (isConfigValid) {
+      const initialized = initEmailJS()
+      setEmailJSReady(initialized)
+    } else {
+      console.warn('EmailJS ist nicht konfiguriert. Formular funktioniert im Demo-Modus.')
+    }
+  }, [])
+
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true)
     
     try {
-      // In a real implementation, you would send this to your API
-      // For now, we'll just simulate a successful submission
-      await new Promise(resolve => setTimeout(resolve, 1000))
+      if (emailJSReady) {
+        // Echte E-Mail über EmailJS senden
+        await sendContactEmail(data)
+        toast.success('Nachricht erfolgreich gesendet!')
+      } else {
+        // Demo-Modus falls EmailJS nicht konfiguriert ist
+        console.log('Demo-Modus: Kontaktformular-Daten:', data)
+        await new Promise(resolve => setTimeout(resolve, 1000))
+        toast.success('Nachricht erfolgreich gesendet! (Demo-Modus)')
+      }
       
-      toast.success('Nachricht erfolgreich gesendet!')
       setIsSubmitted(true)
       reset()
     } catch (error) {
+      console.error('Fehler beim Senden:', error)
       toast.error('Fehler beim Senden der Nachricht. Bitte versuchen Sie es erneut.')
     } finally {
       setIsSubmitting(false)

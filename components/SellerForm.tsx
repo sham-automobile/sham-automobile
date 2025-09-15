@@ -1,11 +1,12 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { Upload, CheckCircle, Car } from 'lucide-react'
 import toast from 'react-hot-toast'
 import Image from 'next/image'
 import { SellerFormData } from '@/types'
+import { initEmailJS, sendSellerEmail, validateEmailJSConfig } from '@/lib/emailjs'
 
 const MAKES = [
   'Audi', 'BMW', 'Mercedes-Benz', 'Volkswagen', 'Opel', 'Ford', 
@@ -17,6 +18,7 @@ export default function SellerForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [uploadedImages, setUploadedImages] = useState<File[]>([])
+  const [emailJSReady, setEmailJSReady] = useState(false)
   
   const {
     register,
@@ -24,6 +26,17 @@ export default function SellerForm() {
     reset,
     formState: { errors },
   } = useForm<SellerFormData>()
+
+  // EmailJS initialisieren
+  useEffect(() => {
+    const isConfigValid = validateEmailJSConfig()
+    if (isConfigValid) {
+      const initialized = initEmailJS()
+      setEmailJSReady(initialized)
+    } else {
+      console.warn('EmailJS ist nicht konfiguriert. Formular funktioniert im Demo-Modus.')
+    }
+  }, [])
 
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(event.target.files || [])
@@ -41,21 +54,27 @@ export default function SellerForm() {
     setIsSubmitting(true)
     
     try {
-      // In a real implementation, you would send this to your API
-      const formData = {
-        ...data,
-        images: uploadedImages,
-        submittedAt: new Date().toISOString(),
+      if (emailJSReady) {
+        // Echte E-Mail über EmailJS senden
+        await sendSellerEmail(data)
+        toast.success('Anfrage erfolgreich gesendet!')
+      } else {
+        // Demo-Modus falls EmailJS nicht konfiguriert ist
+        const formData = {
+          ...data,
+          images: uploadedImages,
+          submittedAt: new Date().toISOString(),
+        }
+        console.log('Demo-Modus: Verkaufsformular-Daten:', formData)
+        await new Promise(resolve => setTimeout(resolve, 2000))
+        toast.success('Anfrage erfolgreich gesendet! (Demo-Modus)')
       }
       
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000))
-      
-      toast.success('Anfrage erfolgreich gesendet!')
       setIsSubmitted(true)
       reset()
       setUploadedImages([])
     } catch (error) {
+      console.error('Fehler beim Senden:', error)
       toast.error('Fehler beim Senden der Anfrage. Bitte versuchen Sie es erneut.')
     } finally {
       setIsSubmitting(false)
