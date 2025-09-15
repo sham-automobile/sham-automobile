@@ -18,20 +18,20 @@ export default function Header() {
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       {/* Top Bar */}
-      <div className="bg-primary-600 text-white">
+      <div className="bg-primary-800 text-white">
         <div className="container-custom">
           <div className="flex items-center justify-between py-2 text-sm">
             <div className="flex items-center space-x-4">
               <a 
                 href={`tel:${process.env.NEXT_PUBLIC_CONTACT_PHONE}`}
-                className="flex items-center space-x-1 hover:text-primary-200 transition-colors"
+                className="flex items-center space-x-1 hover:text-accent-300 transition-colors"
               >
                 <Phone className="w-4 h-4" />
                 <span>{process.env.NEXT_PUBLIC_CONTACT_PHONE}</span>
               </a>
               <a 
                 href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
-                className="flex items-center space-x-1 hover:text-primary-200 transition-colors"
+                className="flex items-center space-x-1 hover:text-accent-300 transition-colors"
               >
                 <Mail className="w-4 h-4" />
                 <span>{process.env.NEXT_PUBLIC_CONTACT_EMAIL}</span>
@@ -49,12 +49,12 @@ export default function Header() {
         <nav className="flex items-center justify-between py-4">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center">
+            <div className="w-10 h-10 bg-primary-700 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-xl">S</span>
             </div>
             <div>
-              <h1 className="text-xl font-bold text-gray-900">Sham Automobile</h1>
-              <p className="text-sm text-gray-600">Gebrauchtwagen Langenhagen</p>
+              <h1 className="text-xl font-bold text-primary-900">Sham Automobile</h1>
+              <p className="text-sm text-primary-600">Gebrauchtwagen Langenhagen</p>
             </div>
           </Link>
 
@@ -64,7 +64,7 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-primary-600 font-medium transition-colors"
+                className="text-primary-700 hover:text-accent-600 font-medium transition-colors"
               >
                 {item.name}
               </Link>
@@ -73,7 +73,7 @@ export default function Header() {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <Link href="/verkaufen" className="btn-primary">
+            <Link href="/verkaufen" className="btn-accent">
               Auto verkaufen
             </Link>
           </div>
@@ -81,7 +81,7 @@ export default function Header() {
           {/* Mobile menu button */}
           <button
             type="button"
-            className="lg:hidden p-2 rounded-md text-gray-700 hover:text-primary-600 hover:bg-gray-100"
+            className="lg:hidden p-2 rounded-md text-primary-700 hover:text-accent-600 hover:bg-primary-100"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
@@ -96,14 +96,14 @@ export default function Header() {
 
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-200">
+        <div className="lg:hidden bg-white border-t border-primary-200">
           <div className="container-custom py-4">
             <div className="flex flex-col space-y-4">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-gray-700 hover:text-primary-600 font-medium transition-colors py-2"
+                  className="text-primary-700 hover:text-accent-600 font-medium transition-colors py-2"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
@@ -111,7 +111,7 @@ export default function Header() {
               ))}
               <Link
                 href="/verkaufen"
-                className="btn-primary w-full text-center mt-4"
+                className="btn-accent w-full text-center mt-4"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Auto verkaufen

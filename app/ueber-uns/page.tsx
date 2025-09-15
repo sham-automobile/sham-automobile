@@ -15,13 +15,13 @@ export default function UeberUnsPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-primary-600 to-primary-800 text-white">
-        <div className="container-custom py-16">
+      <div className="gradient-hero text-white">
+        <div className="container-custom h-[40vh] flex items-center justify-center">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Über Sham Automobile
             </h1>
-            <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-primary-200 mb-8 max-w-2xl mx-auto">
               Ihr zuverlässiger Partner für Gebrauchtwagen in Langenhagen. 
               Seit über 15 Jahren stehen Qualität, Vertrauen und faire Preise im Mittelpunkt unseres Handelns.
             </p>
@@ -34,10 +34,10 @@ export default function UeberUnsPage() {
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl font-bold text-primary-900 mb-6">
                 Unsere Geschichte
               </h2>
-              <div className="space-y-4 text-gray-600">
+              <div className="space-y-4 text-primary-600">
                 <p>
                   Sham Automobile wurde 2008 mit dem Ziel gegründet, den Gebrauchtwagenhandel 
                   in Langenhagen und Umgebung zu revolutionieren. Was als kleiner Familienbetrieb 
@@ -69,62 +69,62 @@ export default function UeberUnsPage() {
       </div>
 
       {/* Values */}
-      <div className="section-padding bg-gray-50">
+      <div className="section-padding bg-primary-50">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-primary-900 mb-4">
               Unsere Werte
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-primary-600 max-w-2xl mx-auto">
               Was uns antreibt und wie wir arbeiten
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <CheckCircle className="w-8 h-8 text-primary-600" />
+              <div className="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <CheckCircle className="w-8 h-8 text-accent-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+              <h3 className="text-xl font-semibold text-primary-900 mb-4">
                 Qualität
               </h3>
-              <p className="text-gray-600">
+              <p className="text-primary-600">
                 Jedes Fahrzeug wird gründlich geprüft und nur in bester Qualität verkauft.
               </p>
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Users className="w-8 h-8 text-primary-600" />
+              <div className="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Users className="w-8 h-8 text-accent-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+              <h3 className="text-xl font-semibold text-primary-900 mb-4">
                 Vertrauen
               </h3>
-              <p className="text-gray-600">
+              <p className="text-primary-600">
                 Ehrliche Beratung und transparente Preise schaffen Vertrauen bei unseren Kunden.
               </p>
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Award className="w-8 h-8 text-primary-600" />
+              <div className="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Award className="w-8 h-8 text-accent-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+              <h3 className="text-xl font-semibold text-primary-900 mb-4">
                 Erfahrung
               </h3>
-              <p className="text-gray-600">
+              <p className="text-primary-600">
                 Über 15 Jahre Erfahrung im Gebrauchtwagenhandel für optimale Beratung.
               </p>
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Star className="w-8 h-8 text-primary-600" />
+              <div className="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Star className="w-8 h-8 text-accent-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+              <h3 className="text-xl font-semibold text-primary-900 mb-4">
                 Service
               </h3>
-              <p className="text-gray-600">
+              <p className="text-primary-600">
                 Persönlicher Service und individuelle Betreuung für jeden Kunden.
               </p>
             </div>

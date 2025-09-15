@@ -15,13 +15,13 @@ export default function KontaktPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-white border-b border-gray-200">
-        <div className="container-custom py-12">
+      <div className="gradient-hero text-white">
+        <div className="container-custom h-[40vh] flex items-center justify-center">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Kontakt
             </h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-primary-200 max-w-2xl mx-auto">
               Haben Sie Fragen oder möchten Sie einen Termin vereinbaren? 
               Wir sind gerne für Sie da und helfen Ihnen weiter.
             </p>

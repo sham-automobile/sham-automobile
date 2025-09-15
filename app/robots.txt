@@ -11,4 +11,3 @@ Crawl-delay: 1
 Disallow: /admin/
 Disallow: /api/
 Disallow: /_next/
-Disallow: /sanity/

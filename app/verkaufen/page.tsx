@@ -15,27 +15,27 @@ export default function VerkaufenPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-gradient-to-br from-primary-600 to-primary-800 text-white">
-        <div className="container-custom py-16">
+      <div className="gradient-hero text-white">
+        <div className="container-custom h-[40vh] flex items-center justify-center">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Auto verkaufen leicht gemacht
             </h1>
-            <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-primary-200 mb-8 max-w-2xl mx-auto">
               Verkaufen Sie Ihr Auto zu einem fairen Preis. Kostenlose Bewertung, 
               schnelle Abwicklung und sofortige Zahlung bei Sham Automobile.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">
-                <div className="text-2xl font-bold">24h</div>
+                <div className="text-2xl font-bold text-white">24h</div>
                 <div className="text-sm text-primary-200">Antwortzeit</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">
-                <div className="text-2xl font-bold">100%</div>
+                <div className="text-2xl font-bold text-white">100%</div>
                 <div className="text-sm text-primary-200">Kostenlos</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">
-                <div className="text-2xl font-bold">15+</div>
+                <div className="text-2xl font-bold text-white">15+</div>
                 <div className="text-sm text-primary-200">Jahre Erfahrung</div>
               </div>
             </div>

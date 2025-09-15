@@ -1,3 +1,5 @@
+import { ImageAsset } from './vehicle'
+
 export interface Testimonial {
   _id: string
   name: string
@@ -17,17 +19,8 @@ export interface SellerLead {
   year: number
   mileage: number
   description?: string
-  images?: SanityImage[]
+  images?: ImageAsset[]
   status: 'new' | 'contacted' | 'evaluated' | 'completed' | 'rejected'
   notes?: string
   submittedAt: string
-}
-
-export interface SanityImage {
-  _type: 'image'
-  asset: {
-    _ref: string
-    _type: 'reference'
-  }
-  alt?: string
 }

@@ -3,31 +3,31 @@ import { ArrowRight, Car, DollarSign } from 'lucide-react'
 
 export default function Hero() {
   return (
-    <section className="relative bg-gradient-to-br from-primary-600 to-primary-800 text-white overflow-hidden">
+    <section className="relative gradient-hero text-white overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-black/10">
-        <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-800/20 to-primary-900/30" />
       </div>
       
       <div className="relative container-custom section-padding">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-balance">
-            Ihr zuverlässiger Partner für{' '}
-            <span className="text-primary-200">Gebrauchtwagen</span>
+            <span className="text-white">Ihr zuverlässiger Partner für</span>{' '}
+            <span className="text-accent-300">Gebrauchtwagen</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-primary-100 mb-8 max-w-2xl mx-auto text-balance">
+          <p className="text-xl md:text-2xl text-primary-200 mb-8 max-w-2xl mx-auto text-balance">
             Qualität, Vertrauen und faire Preise in Langenhagen. 
             Finden Sie Ihr Traumauto oder verkaufen Sie Ihr Fahrzeug zu einem fairen Preis.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link href="/kaufen" className="btn bg-white text-primary-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold">
+            <Link href="/kaufen" className="btn bg-white text-primary-700 hover:bg-primary-50 px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl">
               <Car className="w-5 h-5 mr-2" />
               Autos kaufen
             </Link>
             
-            <Link href="/verkaufen" className="btn btn-outline border-white text-white hover:bg-white hover:text-primary-600 px-8 py-4 text-lg font-semibold">
+            <Link href="/verkaufen" className="btn btn-accent px-8 py-4 text-lg font-semibold">
               <DollarSign className="w-5 h-5 mr-2" />
               Auto verkaufen
             </Link>

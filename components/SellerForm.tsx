@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { Upload, CheckCircle, Car } from 'lucide-react'
 import toast from 'react-hot-toast'
+import Image from 'next/image'
 import { SellerFormData } from '@/types'
 
 const MAKES = [
@@ -40,7 +41,7 @@ export default function SellerForm() {
     setIsSubmitting(true)
     
     try {
-      // In a real implementation, you would send this to your API/Sanity
+      // In a real implementation, you would send this to your API
       const formData = {
         ...data,
         images: uploadedImages,
@@ -283,9 +284,11 @@ export default function SellerForm() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
               {uploadedImages.map((file, index) => (
                 <div key={index} className="relative">
-                  <img
+                  <Image
                     src={URL.createObjectURL(file)}
                     alt={`Upload ${index + 1}`}
+                    width={80}
+                    height={80}
                     className="w-full h-20 object-cover rounded"
                   />
                   <button

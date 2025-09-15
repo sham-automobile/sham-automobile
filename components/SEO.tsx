@@ -74,9 +74,6 @@ export default function SEO({
       <meta name="googlebot" content="index, follow" />
       <meta name="theme-color" content="#2563eb" />
       
-      {/* Preconnect to external domains */}
-      <link rel="preconnect" href="https://cdn.sanity.io" />
-      <link rel="dns-prefetch" href="https://cdn.sanity.io" />
     </Head>
   )
 }

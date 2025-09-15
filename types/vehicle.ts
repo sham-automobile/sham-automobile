@@ -14,25 +14,17 @@ export interface Vehicle {
   power?: number
   color?: string
   description?: string
-  images: SanityImage[]
-  mainImage?: SanityImage
+  images: ImageAsset[]
+  mainImage?: ImageAsset
   featured?: boolean
   publishedAt: string
 }
 
-export interface SanityImage {
-  _type: 'image'
-  asset: {
-    _ref: string
-    _type: 'reference'
-  }
+export interface ImageAsset {
+  url: string
   alt?: string
-  hotspot?: {
-    x: number
-    y: number
-    height: number
-    width: number
-  }
+  width?: number
+  height?: number
 }
 
 export interface VehicleFilters {

@@ -5,7 +5,6 @@ import { Metadata } from 'next'
 import VehicleCard from '@/components/VehicleCard'
 import FilterBar from '@/components/FilterBar'
 import { Vehicle, VehicleFilters } from '@/types'
-import { client, queries } from '@/lib/sanity'
 
 // Mock data for development
 const mockVehicles: Vehicle[] = [
@@ -24,6 +23,10 @@ const mockVehicles: Vehicle[] = [
     color: 'Schwarz',
     description: 'Sehr guter Zustand, vollständige Servicehistorie',
     images: [],
+    mainImage: {
+      url: '/placeholder-car.jpg',
+      alt: 'BMW 3er Limousine'
+    },
     featured: true,
     publishedAt: '2024-01-15T10:00:00Z',
   },
@@ -42,6 +45,10 @@ const mockVehicles: Vehicle[] = [
     color: 'Weiß',
     description: 'Top Ausstattung, Garagenwagen',
     images: [],
+    mainImage: {
+      url: '/placeholder-car.jpg',
+      alt: 'VW Golf 8'
+    },
     featured: true,
     publishedAt: '2024-01-14T10:00:00Z',
   },
@@ -60,6 +67,10 @@ const mockVehicles: Vehicle[] = [
     color: 'Grau',
     description: 'S-Line Ausstattung, Panoramadach',
     images: [],
+    mainImage: {
+      url: '/placeholder-car.jpg',
+      alt: 'Audi A4 Avant'
+    },
     featured: true,
     publishedAt: '2024-01-13T10:00:00Z',
   },
@@ -78,6 +89,10 @@ const mockVehicles: Vehicle[] = [
     color: 'Silber',
     description: 'AMG Line, Ledersitze',
     images: [],
+    mainImage: {
+      url: '/placeholder-car.jpg',
+      alt: 'Mercedes C-Klasse'
+    },
     featured: false,
     publishedAt: '2024-01-12T10:00:00Z',
   },
@@ -96,6 +111,10 @@ const mockVehicles: Vehicle[] = [
     color: 'Blau',
     description: 'Gute Ausstattung, sparsam',
     images: [],
+    mainImage: {
+      url: '/placeholder-car.jpg',
+      alt: 'Opel Astra'
+    },
     featured: false,
     publishedAt: '2024-01-11T10:00:00Z',
   },
@@ -114,6 +133,10 @@ const mockVehicles: Vehicle[] = [
     color: 'Rot',
     description: 'Titanium Ausstattung',
     images: [],
+    mainImage: {
+      url: '/placeholder-car.jpg',
+      alt: 'Ford Focus'
+    },
     featured: false,
     publishedAt: '2024-01-10T10:00:00Z',
   },
@@ -129,8 +152,8 @@ export default function KaufenPage() {
     async function fetchVehicles() {
       try {
         setLoading(true)
-        // In production, this would fetch from Sanity
-        // const data = await client.fetch(queries.vehicles)
+        // In production, this would fetch from API
+        // const data = await fetch('/api/vehicles').then(res => res.json())
         // setVehicles(data)
         
         // Mock data for development
@@ -215,13 +238,13 @@ export default function KaufenPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-white border-b border-gray-200">
-        <div className="container-custom py-12">
+      <div className="gradient-hero text-white">
+        <div className="container-custom h-[40vh] flex items-center justify-center">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Gebrauchtwagen kaufen
             </h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-primary-200 max-w-2xl mx-auto">
               Entdecken Sie unsere sorgfältig ausgewählten Gebrauchtwagen in bester Qualität. 
               Alle Fahrzeuge werden vor dem Verkauf gründlich geprüft.
             </p>

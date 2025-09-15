@@ -1,7 +1,6 @@
 import { Metadata } from 'next'
 import Hero from '@/components/Hero'
 import VehicleCard from '@/components/VehicleCard'
-import { client, queries } from '@/lib/sanity'
 import { Vehicle, Testimonial } from '@/types'
 import { Star, CheckCircle, Users, Award, Clock } from 'lucide-react'
 import Link from 'next/link'
@@ -32,6 +31,10 @@ const mockVehicles: Vehicle[] = [
     color: 'Schwarz',
     description: 'Sehr guter Zustand, vollständige Servicehistorie',
     images: [],
+    mainImage: {
+      url: '/placeholder-car.jpg',
+      alt: 'BMW 3er Limousine'
+    },
     featured: true,
     publishedAt: '2024-01-15T10:00:00Z',
   },
@@ -50,6 +53,10 @@ const mockVehicles: Vehicle[] = [
     color: 'Weiß',
     description: 'Top Ausstattung, Garagenwagen',
     images: [],
+    mainImage: {
+      url: '/placeholder-car.jpg',
+      alt: 'VW Golf 8'
+    },
     featured: true,
     publishedAt: '2024-01-14T10:00:00Z',
   },
@@ -68,6 +75,10 @@ const mockVehicles: Vehicle[] = [
     color: 'Grau',
     description: 'S-Line Ausstattung, Panoramadach',
     images: [],
+    mainImage: {
+      url: '/placeholder-car.jpg',
+      alt: 'Audi A4 Avant'
+    },
     featured: true,
     publishedAt: '2024-01-13T10:00:00Z',
   },
@@ -101,27 +112,13 @@ const mockTestimonials: Testimonial[] = [
 ]
 
 async function getFeaturedVehicles(): Promise<Vehicle[]> {
-  try {
-    // In production, this would fetch from Sanity
-    // const vehicles = await client.fetch(queries.featuredVehicles)
-    // return vehicles
-    return mockVehicles
-  } catch (error) {
-    console.error('Error fetching featured vehicles:', error)
-    return mockVehicles
-  }
+  // Using mock data for now - will be replaced with API data later
+  return mockVehicles
 }
 
 async function getTestimonials(): Promise<Testimonial[]> {
-  try {
-    // In production, this would fetch from Sanity
-    // const testimonials = await client.fetch(queries.testimonials)
-    // return testimonials
-    return mockTestimonials
-  } catch (error) {
-    console.error('Error fetching testimonials:', error)
-    return mockTestimonials
-  }
+  // Using mock data for now - will be replaced with API data later
+  return mockTestimonials
 }
 
 export default async function HomePage() {
@@ -135,13 +132,13 @@ export default async function HomePage() {
       <Hero />
       
       {/* Featured Vehicles */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-primary-50">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary-900 mb-4">
               Unsere Empfehlungen
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-primary-600 max-w-2xl mx-auto">
               Entdecken Sie unsere sorgfältig ausgewählten Gebrauchtwagen in bester Qualität
             </p>
           </div>
@@ -153,7 +150,7 @@ export default async function HomePage() {
           </div>
           
           <div className="text-center">
-            <Link href="/kaufen" className="btn-primary">
+            <Link href="/kaufen" className="btn-accent">
               Alle Fahrzeuge ansehen
             </Link>
           </div>
@@ -164,47 +161,47 @@ export default async function HomePage() {
       <section className="section-padding">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary-900 mb-4">
               So einfach geht's
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-primary-600 max-w-2xl mx-auto">
               In nur 3 Schritten zu Ihrem Traumauto oder fairem Verkaufspreis
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold text-primary-600">1</span>
+              <div className="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl font-bold text-accent-600">1</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+              <h3 className="text-xl font-semibold text-primary-900 mb-4">
                 Fahrzeug finden oder bewerten lassen
               </h3>
-              <p className="text-gray-600">
+              <p className="text-primary-600">
                 Durchsuchen Sie unsere Auswahl oder lassen Sie Ihr Auto kostenlos bewerten
               </p>
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold text-primary-600">2</span>
+              <div className="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl font-bold text-accent-600">2</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+              <h3 className="text-xl font-semibold text-primary-900 mb-4">
                 Termin vereinbaren
               </h3>
-              <p className="text-gray-600">
+              <p className="text-primary-600">
                 Besichtigen Sie das Fahrzeug oder lassen Sie Ihr Auto vor Ort bewerten
               </p>
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold text-primary-600">3</span>
+              <div className="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl font-bold text-accent-600">3</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+              <h3 className="text-xl font-semibold text-primary-900 mb-4">
                 Vertrag abschließen
               </h3>
-              <p className="text-gray-600">
+              <p className="text-primary-600">
                 Faire Preise, transparente Abwicklung und sofortige Zahlung
               </p>
             </div>
@@ -213,13 +210,13 @@ export default async function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="section-padding bg-primary-50">
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary-900 mb-4">
               Was unsere Kunden sagen
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-primary-600 max-w-2xl mx-auto">
               Über 500 zufriedene Kunden vertrauen auf Sham Automobile
             </p>
           </div>
@@ -237,11 +234,11 @@ export default async function HomePage() {
                     />
                   ))}
                 </div>
-                <p className="text-gray-600 mb-4 italic">"{testimonial.text}"</p>
+                <p className="text-primary-600 mb-4 italic">"{testimonial.text}"</p>
                 <div>
-                  <p className="font-semibold text-gray-900">{testimonial.name}</p>
+                  <p className="font-semibold text-primary-900">{testimonial.name}</p>
                   {testimonial.vehicle && (
-                    <p className="text-sm text-gray-500">{testimonial.vehicle}</p>
+                    <p className="text-sm text-primary-500">{testimonial.vehicle}</p>
                   )}
                 </div>
               </div>
@@ -254,59 +251,59 @@ export default async function HomePage() {
       <section className="section-padding">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary-900 mb-4">
               Warum Sham Automobile?
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-primary-600 max-w-2xl mx-auto">
               Über 15 Jahre Erfahrung im Gebrauchtwagenhandel
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <CheckCircle className="w-8 h-8 text-primary-600" />
+              <div className="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <CheckCircle className="w-8 h-8 text-accent-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+              <h3 className="text-xl font-semibold text-primary-900 mb-4">
                 Qualität garantiert
               </h3>
-              <p className="text-gray-600">
+              <p className="text-primary-600">
                 Alle Fahrzeuge werden sorgfältig geprüft und mit Garantie verkauft
               </p>
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Users className="w-8 h-8 text-primary-600" />
+              <div className="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Users className="w-8 h-8 text-accent-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+              <h3 className="text-xl font-semibold text-primary-900 mb-4">
                 Persönliche Beratung
               </h3>
-              <p className="text-gray-600">
+              <p className="text-primary-600">
                 Individuelle Beratung ohne Verkaufsdruck - Ihr Vertrauen ist uns wichtig
               </p>
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Award className="w-8 h-8 text-primary-600" />
+              <div className="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Award className="w-8 h-8 text-accent-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+              <h3 className="text-xl font-semibold text-primary-900 mb-4">
                 Faire Preise
               </h3>
-              <p className="text-gray-600">
+              <p className="text-primary-600">
                 Transparente Preisgestaltung basierend auf aktuellen Marktwerten
               </p>
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Clock className="w-8 h-8 text-primary-600" />
+              <div className="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Clock className="w-8 h-8 text-accent-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+              <h3 className="text-xl font-semibold text-primary-900 mb-4">
                 Schnelle Abwicklung
               </h3>
-              <p className="text-gray-600">
+              <p className="text-primary-600">
                 Unkomplizierte Prozesse und sofortige Zahlung beim Verkauf
               </p>
             </div>
@@ -315,19 +312,19 @@ export default async function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-primary-600 text-white">
+      <section className="section-padding gradient-hero text-white">
         <div className="container-custom text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Bereit für Ihr nächstes Auto?
           </h2>
-          <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-primary-200 mb-8 max-w-2xl mx-auto">
             Entdecken Sie unsere Auswahl oder lassen Sie Ihr Auto kostenlos bewerten
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/kaufen" className="btn bg-white text-primary-600 hover:bg-gray-100">
+            <Link href="/kaufen" className="btn bg-white text-primary-700 hover:bg-primary-50 px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl">
               Autos kaufen
             </Link>
-            <Link href="/verkaufen" className="btn btn-outline border-white text-white hover:bg-white hover:text-primary-600">
+            <Link href="/verkaufen" className="btn btn-accent px-8 py-4 text-lg font-semibold">
               Auto verkaufen
             </Link>
           </div>

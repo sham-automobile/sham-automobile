@@ -4,13 +4,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Calendar, Gauge, Settings, Fuel, Power, Palette, Phone, Mail } from 'lucide-react'
 import { Vehicle, FUEL_TYPE_LABELS, TRANSMISSION_LABELS } from '@/types'
-import { client, queries, urlFor } from '@/lib/sanity'
 import ContactForm from '@/components/ContactForm'
 
 interface VehiclePageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 // Mock data for development
@@ -29,12 +28,17 @@ const mockVehicle: Vehicle = {
   color: 'Schwarz',
   description: 'Sehr guter Zustand, vollständige Servicehistorie. Das Fahrzeug wurde regelmäßig gewartet und befindet sich in einem ausgezeichneten technischen und optischen Zustand. Alle Serviceintervalle wurden eingehalten und dokumentiert.',
   images: [],
+  mainImage: {
+    url: '/placeholder-car.jpg',
+    alt: 'BMW 3er Limousine'
+  },
   featured: true,
   publishedAt: '2024-01-15T10:00:00Z',
 }
 
 export async function generateMetadata({ params }: VehiclePageProps): Promise<Metadata> {
-  const vehicle = mockVehicle // In production: await getVehicle(params.slug)
+  const { slug } = await params
+  const vehicle = mockVehicle // In production: await getVehicle(slug)
   
   if (!vehicle) {
     return {
@@ -51,30 +55,22 @@ export async function generateMetadata({ params }: VehiclePageProps): Promise<Me
     openGraph: {
       title,
       description,
-      images: vehicle.mainImage ? [urlFor(vehicle.mainImage).width(1200).height(630).url()] : [],
+      images: [],
     },
   }
 }
 
 async function getVehicle(slug: string): Promise<Vehicle | null> {
-  try {
-    // In production, this would fetch from Sanity
-    // const vehicle = await client.fetch(queries.vehicleBySlug, { slug })
-    // return vehicle
-    
-    // Mock data for development
-    if (slug === 'bmw-3er-limousine') {
-      return mockVehicle
-    }
-    return null
-  } catch (error) {
-    console.error('Error fetching vehicle:', error)
-    return null
+  // Mock data for development - will be replaced with API data later 
+  if (slug === 'bmw-3er-limousine') {
+    return mockVehicle
   }
+  return null
 }
 
 export default async function VehiclePage({ params }: VehiclePageProps) {
-  const vehicle = await getVehicle(params.slug)
+  const { slug } = await params
+  const vehicle = await getVehicle(slug)
 
   if (!vehicle) {
     notFound()
@@ -167,19 +163,13 @@ export default async function VehiclePage({ params }: VehiclePageProps) {
               {/* Image Gallery */}
               <div className="card p-6">
                 <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden mb-4">
-                  {vehicle.mainImage ? (
-                    <Image
-                      src={urlFor(vehicle.mainImage).width(800).height(450).url()}
-                      alt={vehicle.mainImage.alt || `${vehicle.make} ${vehicle.model}`}
-                      width={800}
-                      height={450}
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center">
-                      <span className="text-gray-400 text-lg">Kein Bild verfügbar</span>
-                    </div>
-                  )}
+                  <Image
+                    src="/placeholder-car.jpg"
+                    alt={vehicle.mainImage?.alt || `${vehicle.make} ${vehicle.model}`}
+                    width={800}
+                    height={450}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 
                 {/* Additional Images Placeholder */}
