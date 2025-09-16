@@ -4,6 +4,7 @@ import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import ToasterProvider from '@/components/ToasterProvider'
+import { ThemeProvider } from '@/contexts/ThemeContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -63,12 +64,14 @@ export default function RootLayout({
   return (
     <html lang="de" className="scroll-smooth">
       <body className={inter.className}>
-        <Header />
-        <main className="min-h-screen">
-          {children}
-        </main>
-        <Footer />
-        <ToasterProvider />
+        <ThemeProvider>
+          <Header />
+          <main className="min-h-screen">
+            {children}
+          </main>
+          <Footer />
+          <ToasterProvider />
+        </ThemeProvider>
       </body>
     </html>
   )

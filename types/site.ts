@@ -26,6 +26,8 @@ export interface ContactFormData {
   phone?: string
   subject: string
   message: string
+  // Honeypot field (should always be empty)
+  website?: string
 }
 
 export interface SellerFormData {
@@ -38,6 +40,8 @@ export interface SellerFormData {
   mileage: number
   description?: string
   images?: File[]
+  // Honeypot field (should always be empty)
+  website?: string
 }
 
 export interface SEOProps {

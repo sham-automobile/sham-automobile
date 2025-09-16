@@ -21,12 +21,12 @@
   }
   
   body {
-    @apply text-primary-800 bg-white;
+    @apply text-primary-800 bg-white dark:text-gray-200 dark:bg-gray-900;
     line-height: 1.6;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold text-primary-900;
+    @apply font-bold text-primary-900 dark:text-white;
     line-height: 1.2;
   }
   
@@ -47,7 +47,7 @@
   }
   
   p {
-    @apply text-primary-600 leading-relaxed;
+    @apply text-primary-600 dark:text-gray-300 leading-relaxed;
   }
   
   a {
@@ -81,11 +81,11 @@
   }
   
   .card {
-    @apply bg-white rounded-xl shadow-sm border border-primary-200 overflow-hidden hover:shadow-md transition-shadow duration-200;
+    @apply bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-primary-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition-shadow duration-200;
   }
   
   .input {
-    @apply w-full px-4 py-3 border border-primary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200;
+    @apply w-full px-4 py-3 border border-primary-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200;
   }
   
   .textarea {

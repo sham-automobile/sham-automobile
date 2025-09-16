@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { Menu, X, Phone, Mail } from 'lucide-react'
+import { useTheme } from '@/contexts/ThemeContext'
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -17,6 +18,7 @@ const navigation = [
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const pathname = usePathname()
+  const { isDark } = useTheme()
 
   // Function to check if a navigation item is active
   const isActive = (href: string) => {
@@ -27,7 +29,7 @@ export default function Header() {
   }
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
+    <header className="bg-white dark:bg-gray-900 shadow-sm sticky top-0 z-50">
       {/* Top Bar */}
       <div className="bg-primary-800 text-white">
         <div className="container-custom">
@@ -62,7 +64,7 @@ export default function Header() {
           <Link href="/" className="flex items-center">
             <div className="h-12 w-64 flex items-center justify-center overflow-hidden">
               <Image 
-                src="/images/logo-sham-automobile.png" 
+                src={isDark ? "/images/logo-white.png" : "/images/logo-sham-automobile.png"} 
                 alt="Sham Automobile Logo" 
                 width={256}
                 height={80}
@@ -81,7 +83,7 @@ export default function Header() {
                 className={`font-medium transition-colors ${
                   isActive(item.href)
                     ? 'text-accent-600 border-b-2 border-accent-600 pb-1'
-                    : 'text-primary-700 hover:text-accent-600'
+                    : 'text-primary-700 dark:text-gray-300 hover:text-accent-600'
                 }`}
               >
                 {item.name}
@@ -99,7 +101,7 @@ export default function Header() {
           {/* Mobile menu button */}
           <button
             type="button"
-            className="lg:hidden p-2 rounded-md text-primary-700 hover:text-accent-600 hover:bg-primary-100"
+            className="lg:hidden p-2 rounded-md text-primary-700 dark:text-gray-300 hover:text-accent-600 hover:bg-primary-100 dark:hover:bg-gray-800"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
@@ -114,7 +116,7 @@ export default function Header() {
 
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-primary-200">
+        <div className="lg:hidden bg-white dark:bg-gray-900 border-t border-primary-200 dark:border-gray-700">
           <div className="container-custom py-4">
             <div className="flex flex-col space-y-4">
               {navigation.map((item) => (
@@ -123,8 +125,8 @@ export default function Header() {
                   href={item.href}
                   className={`font-medium transition-colors py-2 ${
                     isActive(item.href)
-                      ? 'text-accent-600 bg-accent-50 border-l-4 border-accent-600 pl-4'
-                      : 'text-primary-700 hover:text-accent-600'
+                      ? 'text-accent-600 bg-accent-50 dark:bg-accent-900/20 border-l-4 border-accent-600 pl-4'
+                      : 'text-primary-700 dark:text-gray-300 hover:text-accent-600'
                   }`}
                   onClick={() => setMobileMenuOpen(false)}
                 >

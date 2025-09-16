@@ -51,6 +51,13 @@ export default function SellerForm() {
   }
 
   const onSubmit = async (data: SellerFormData) => {
+    // Honeypot-Spam-Schutz: Wenn das "website" Feld ausgefüllt ist, ist es wahrscheinlich ein Bot
+    if (data.website && data.website.trim() !== '') {
+      console.log('Spam erkannt: Honeypot-Feld wurde ausgefüllt')
+      toast.error('Spam erkannt. Bitte versuchen Sie es erneut.')
+      return
+    }
+    
     setIsSubmitting(true)
     
     try {
@@ -73,9 +80,16 @@ export default function SellerForm() {
       setIsSubmitted(true)
       reset()
       setUploadedImages([])
-    } catch (error) {
+    } catch (error: any) {
       console.error('Fehler beim Senden:', error)
-      toast.error('Fehler beim Senden der Anfrage. Bitte versuchen Sie es erneut.')
+      
+      // Spezielle Behandlung für Rate Limit Fehler
+      if (error.name === 'RateLimitError') {
+        const remainingTime = error.remainingTime || 60
+        toast.error(`Zu viele E-Mails gesendet. Bitte warten Sie ${remainingTime} Minuten, bevor Sie erneut eine Anfrage senden.`)
+      } else {
+        toast.error('Fehler beim Senden der Anfrage. Bitte versuchen Sie es erneut.')
+      }
     } finally {
       setIsSubmitting(false)
     }
@@ -322,6 +336,18 @@ export default function SellerForm() {
             </div>
           </div>
         )}
+      </div>
+
+      {/* Honeypot-Feld (versteckt für Spam-Schutz) */}
+      <div style={{ display: 'none' }}>
+        <label htmlFor="website">Website (nicht ausfüllen)</label>
+        <input
+          type="text"
+          id="website"
+          {...register('website')}
+          tabIndex={-1}
+          autoComplete="off"
+        />
       </div>
 
       <div className="mt-6">

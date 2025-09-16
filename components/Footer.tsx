@@ -18,8 +18,8 @@ const navigation = {
 }
 
 const openingHours = [
-  { day: 'Montag - Freitag', hours: '09:00 - 18:00' },
-  { day: 'Samstag', hours: '09:00 - 14:00' },
+  { day: 'Montag - Freitag', hours: '08:00 - 18:00' },
+  { day: 'Samstag', hours: '08:00 - 14:00' },
   { day: 'Sonntag', hours: 'Geschlossen' },
 ]
 
@@ -34,7 +34,7 @@ export default function Footer() {
               <Link href="/" className="flex items-center mb-6">
                 <div className="h-12 w-64 flex items-center justify-center overflow-hidden">
                   <Image 
-                    src="/images/logo-sham-automobile.png" 
+                    src="/images/logo-white.png" 
                     alt="Sham Automobile Logo" 
                     width={256}
                     height={80}

@@ -125,8 +125,8 @@ Stellen Sie sicher, dass diese Daten überall identisch sind:
   "email": "info@sham-automobile.de",
   "url": "https://sham-automobile.de",
   "openingHours": [
-    "Mo-Fr 09:00-18:00",
-    "Sa 09:00-14:00"
+    "Mo-Fr 08:00-18:00",
+    "Sa 08:00-14:00"
   ],
   "priceRange": "€€",
   "paymentAccepted": "Cash, Credit Card, Bank Transfer"

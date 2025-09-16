@@ -169,8 +169,8 @@ export default function UeberUnsPage() {
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-2">Öffnungszeiten</h3>
                     <div className="text-gray-600 space-y-1">
-                      <p>Montag - Freitag: 09:00 - 18:00</p>
-                      <p>Samstag: 09:00 - 14:00</p>
+                      <p>Montag - Freitag: 08:00 - 18:00</p>
+                      <p>Samstag: 08:00 - 14:00</p>
                       <p>Sonntag: Geschlossen</p>
                     </div>
                   </div>
