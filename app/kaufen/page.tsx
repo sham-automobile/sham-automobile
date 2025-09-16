@@ -238,8 +238,20 @@ export default function KaufenPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="gradient-hero text-white">
-        <div className="container-custom h-[40vh] flex items-center justify-center">
+      <div className="gradient-hero text-white relative overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+          style={{
+            backgroundImage: 'url(/images/kaufen-hero.jpg)'
+          }}
+        />
+        
+        {/* Background Overlay */}
+        <div className="absolute inset-0 bg-black/10">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary-800/20 to-primary-900/30" />
+        </div>
+        <div className="relative container-custom h-[40vh] flex items-center justify-center">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Gebrauchtwagen kaufen

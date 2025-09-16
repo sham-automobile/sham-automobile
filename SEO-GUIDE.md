@@ -1,5 +1,8 @@
 # SEO & Content Guide für Sham Automobile
 
+
+https://unsplash.com/de/fotos/eine-reihe-von-autos-die-auf-einem-parkplatz-geparkt-sind-3WAMh1omVAY
+
 ## 📝 Title & Meta Description Templates
 
 ### Homepage

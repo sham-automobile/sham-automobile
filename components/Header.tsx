@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
+import { usePathname } from 'next/navigation'
 import { Menu, X, Phone, Mail } from 'lucide-react'
 
 const navigation = [
@@ -14,6 +15,15 @@ const navigation = [
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const pathname = usePathname()
+
+  // Function to check if a navigation item is active
+  const isActive = (href: string) => {
+    if (href === '/') {
+      return pathname === '/'
+    }
+    return pathname.startsWith(href)
+  }
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
@@ -48,13 +58,13 @@ export default function Header() {
       <div className="container-custom">
         <nav className="flex items-center justify-between py-4">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-primary-700 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">S</span>
-            </div>
-            <div>
-              <h1 className="text-xl font-bold text-primary-900">Sham Automobile</h1>
-              <p className="text-sm text-primary-600">Gebrauchtwagen Langenhagen</p>
+          <Link href="/" className="flex items-center">
+            <div className="h-12 w-64 flex items-center justify-center overflow-hidden">
+              <img 
+                src="/images/logo-sham-automobile.png" 
+                alt="Sham Automobile Logo" 
+                className="h-20 w-auto object-contain scale-[2.8]"
+              />
             </div>
           </Link>
 
@@ -64,7 +74,11 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-primary-700 hover:text-accent-600 font-medium transition-colors"
+                className={`font-medium transition-colors ${
+                  isActive(item.href)
+                    ? 'text-accent-600 border-b-2 border-accent-600 pb-1'
+                    : 'text-primary-700 hover:text-accent-600'
+                }`}
               >
                 {item.name}
               </Link>
@@ -73,8 +87,8 @@ export default function Header() {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <Link href="/verkaufen" className="btn-accent">
-              Auto verkaufen
+            <Link href="/kaufen" className="btn-accent text-lg px-6 py-3">
+              Auto kaufen
             </Link>
           </div>
 
@@ -103,18 +117,22 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-primary-700 hover:text-accent-600 font-medium transition-colors py-2"
+                  className={`font-medium transition-colors py-2 ${
+                    isActive(item.href)
+                      ? 'text-accent-600 bg-accent-50 border-l-4 border-accent-600 pl-4'
+                      : 'text-primary-700 hover:text-accent-600'
+                  }`}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
               <Link
-                href="/verkaufen"
-                className="btn-accent w-full text-center mt-4"
+                href="/kaufen"
+                className="btn-accent w-full text-center mt-4 text-lg py-3"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Auto verkaufen
+                Auto kaufen
               </Link>
             </div>
           </div>

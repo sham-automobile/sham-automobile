@@ -15,13 +15,25 @@ export default function UeberUnsPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <div className="gradient-hero text-white">
-        <div className="container-custom h-[40vh] flex items-center justify-center">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+      <div className="gradient-hero text-white relative overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+          style={{
+            backgroundImage: 'url(/images/ueber-uns-hero.jpg)'
+          }}
+        />
+        
+        {/* Background Overlay */}
+        <div className="absolute inset-0 bg-black/10">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary-800/20 to-primary-900/30" />
+        </div>
+        <div className="relative container-custom h-[40vh] flex items-center justify-center">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Über Sham Automobile
             </h1>
-            <p className="text-xl text-primary-200 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-primary-200 max-w-2xl mx-auto">
               Ihr zuverlässiger Partner für Gebrauchtwagen in Langenhagen. 
               Seit über 15 Jahren stehen Qualität, Vertrauen und faire Preise im Mittelpunkt unseres Handelns.
             </p>

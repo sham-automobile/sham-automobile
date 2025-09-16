@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram } from 'lucide-react'
+import { Phone, Mail, MapPin, Clock } from 'lucide-react'
 
 const navigation = {
   main: [
@@ -30,35 +30,19 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Company Info */}
             <div className="lg:col-span-1">
-              <Link href="/" className="flex items-center space-x-2 mb-6">
-                <div className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">S</span>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold">Sham Automobile</h3>
-                  <p className="text-sm text-gray-400">Gebrauchtwagen Langenhagen</p>
+              <Link href="/" className="flex items-center mb-6">
+                <div className="h-12 w-64 flex items-center justify-center overflow-hidden">
+                  <img 
+                    src="/images/logo-sham-automobile.png" 
+                    alt="Sham Automobile Logo" 
+                    className="h-20 w-auto object-contain scale-[2.8]"
+                  />
                 </div>
               </Link>
               <p className="text-gray-300 mb-6">
                 Ihr zuverlässiger Partner für qualitativ hochwertige Gebrauchtwagen in Langenhagen. 
                 Vertrauen, Transparenz und faire Preise stehen bei uns im Vordergrund.
               </p>
-              <div className="flex space-x-4">
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
-                  aria-label="Facebook"
-                >
-                  <Facebook className="w-5 h-5" />
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
-                  aria-label="Instagram"
-                >
-                  <Instagram className="w-5 h-5" />
-                </a>
-              </div>
             </div>
 
             {/* Navigation */}
