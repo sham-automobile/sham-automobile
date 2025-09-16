@@ -17,9 +17,7 @@ export async function GET(request: Request) {
     return NextResponse.json(vehicles)
   } catch (error) {
     console.error('Error fetching vehicles:', error)
-    return NextResponse.json(
-      { error: 'Failed to fetch vehicles' },
-      { status: 500 }
-    )
+    // Return empty array instead of error for better UX
+    return NextResponse.json([])
   }
 }

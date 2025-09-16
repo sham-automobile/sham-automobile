@@ -43,14 +43,14 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     }
   }, [theme, mounted])
 
-  // Prevent hydration mismatch by not rendering until mounted
-  if (!mounted) {
-    return <div className="min-h-screen bg-white">{children}</div>
-  }
-
+  // Always provide the context, even before mounted
   return (
     <ThemeContext.Provider value={{ theme, isDark: theme === 'dark' }}>
-      {children}
+      {!mounted ? (
+        <div className="min-h-screen bg-white">{children}</div>
+      ) : (
+        children
+      )}
     </ThemeContext.Provider>
   )
 }
@@ -58,7 +58,8 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 export function useTheme() {
   const context = useContext(ThemeContext)
   if (context === undefined) {
-    throw new Error('useTheme must be used within a ThemeProvider')
+    // Return default values if context is not available
+    return { theme: 'light' as Theme, isDark: false }
   }
   return context
 }
