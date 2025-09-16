@@ -4,6 +4,7 @@ import VehicleCard from '@/components/VehicleCard'
 import { Vehicle, Testimonial } from '@/types'
 import { Star, CheckCircle, Users, Award, Clock } from 'lucide-react'
 import Link from 'next/link'
+import { getFeaturedVehicles } from '@/lib/sanity'
 
 export const metadata: Metadata = {
   title: 'Gebrauchtwagen kaufen und verkaufen in Langenhagen',
@@ -14,76 +15,7 @@ export const metadata: Metadata = {
   },
 }
 
-// Mock data for development
-const mockVehicles: Vehicle[] = [
-  {
-    _id: '1',
-    title: 'BMW 3er Limousine',
-    slug: { current: 'bmw-3er-limousine' },
-    make: 'BMW',
-    model: '3er',
-    year: 2020,
-    price: 28900,
-    mileage: 45000,
-    transmission: 'automatic',
-    fuelType: 'diesel',
-    power: 190,
-    color: 'Schwarz',
-    description: 'Sehr guter Zustand, vollständige Servicehistorie',
-    images: [],
-    mainImage: {
-      url: '/placeholder-car.jpg',
-      alt: 'BMW 3er Limousine'
-    },
-    featured: true,
-    publishedAt: '2024-01-15T10:00:00Z',
-  },
-  {
-    _id: '2',
-    title: 'VW Golf 8',
-    slug: { current: 'vw-golf-8' },
-    make: 'Volkswagen',
-    model: 'Golf',
-    year: 2021,
-    price: 22900,
-    mileage: 32000,
-    transmission: 'manual',
-    fuelType: 'petrol',
-    power: 150,
-    color: 'Weiß',
-    description: 'Top Ausstattung, Garagenwagen',
-    images: [],
-    mainImage: {
-      url: '/placeholder-car.jpg',
-      alt: 'VW Golf 8'
-    },
-    featured: true,
-    publishedAt: '2024-01-14T10:00:00Z',
-  },
-  {
-    _id: '3',
-    title: 'Audi A4 Avant',
-    slug: { current: 'audi-a4-avant' },
-    make: 'Audi',
-    model: 'A4',
-    year: 2019,
-    price: 31900,
-    mileage: 68000,
-    transmission: 'automatic',
-    fuelType: 'diesel',
-    power: 190,
-    color: 'Grau',
-    description: 'S-Line Ausstattung, Panoramadach',
-    images: [],
-    mainImage: {
-      url: '/placeholder-car.jpg',
-      alt: 'Audi A4 Avant'
-    },
-    featured: true,
-    publishedAt: '2024-01-13T10:00:00Z',
-  },
-]
-
+// Mock testimonials (can be moved to Sanity later)
 const mockTestimonials: Testimonial[] = [
   {
     _id: '1',
@@ -111,13 +43,8 @@ const mockTestimonials: Testimonial[] = [
   },
 ]
 
-async function getFeaturedVehicles(): Promise<Vehicle[]> {
-  // Using mock data for now - will be replaced with API data later
-  return mockVehicles
-}
-
 async function getTestimonials(): Promise<Testimonial[]> {
-  // Using mock data for now - will be replaced with API data later
+  // Using mock data for now - can be moved to Sanity later
   return mockTestimonials
 }
 
@@ -143,17 +70,36 @@ export default async function HomePage() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {featuredVehicles.map((vehicle) => (
-              <VehicleCard key={vehicle._id} vehicle={vehicle} />
-            ))}
-          </div>
-          
-          <div className="text-center">
-            <Link href="/kaufen" className="btn-accent">
-              Alle Fahrzeuge ansehen
-            </Link>
-          </div>
+          {featuredVehicles.length > 0 ? (
+            <>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                {featuredVehicles.map((vehicle: Vehicle) => (
+                  <VehicleCard key={vehicle._id} vehicle={vehicle} />
+                ))}
+              </div>
+              
+              <div className="text-center">
+                <Link href="/kaufen" className="btn-accent">
+                  Alle Fahrzeuge ansehen
+                </Link>
+              </div>
+            </>
+          ) : (
+            <div className="text-center py-12">
+              <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">🚗</span>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                Bald verfügbar
+              </h3>
+              <p className="text-gray-600 mb-6">
+                Wir arbeiten daran, Ihnen die besten Fahrzeuge zu präsentieren.
+              </p>
+              <Link href="/kaufen" className="btn-accent">
+                Alle Fahrzeuge ansehen
+              </Link>
+            </div>
+          )}
         </div>
       </section>
 

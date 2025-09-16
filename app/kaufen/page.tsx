@@ -1,150 +1,14 @@
 'use client'
 
 import { useState, useEffect, useMemo } from 'react'
-import { Metadata } from 'next'
 import VehicleCard from '@/components/VehicleCard'
 import FilterBar from '@/components/FilterBar'
 import { Vehicle, VehicleFilters } from '@/types'
 
-// Mock data for development
-const mockVehicles: Vehicle[] = [
-  {
-    _id: '1',
-    title: 'BMW 3er Limousine',
-    slug: { current: 'bmw-3er-limousine' },
-    make: 'BMW',
-    model: '3er',
-    year: 2020,
-    price: 28900,
-    mileage: 45000,
-    transmission: 'automatic',
-    fuelType: 'diesel',
-    power: 190,
-    color: 'Schwarz',
-    description: 'Sehr guter Zustand, vollständige Servicehistorie',
-    images: [],
-    mainImage: {
-      url: '/placeholder-car.jpg',
-      alt: 'BMW 3er Limousine'
-    },
-    featured: true,
-    publishedAt: '2024-01-15T10:00:00Z',
-  },
-  {
-    _id: '2',
-    title: 'VW Golf 8',
-    slug: { current: 'vw-golf-8' },
-    make: 'Volkswagen',
-    model: 'Golf',
-    year: 2021,
-    price: 22900,
-    mileage: 32000,
-    transmission: 'manual',
-    fuelType: 'petrol',
-    power: 150,
-    color: 'Weiß',
-    description: 'Top Ausstattung, Garagenwagen',
-    images: [],
-    mainImage: {
-      url: '/placeholder-car.jpg',
-      alt: 'VW Golf 8'
-    },
-    featured: true,
-    publishedAt: '2024-01-14T10:00:00Z',
-  },
-  {
-    _id: '3',
-    title: 'Audi A4 Avant',
-    slug: { current: 'audi-a4-avant' },
-    make: 'Audi',
-    model: 'A4',
-    year: 2019,
-    price: 31900,
-    mileage: 68000,
-    transmission: 'automatic',
-    fuelType: 'diesel',
-    power: 190,
-    color: 'Grau',
-    description: 'S-Line Ausstattung, Panoramadach',
-    images: [],
-    mainImage: {
-      url: '/placeholder-car.jpg',
-      alt: 'Audi A4 Avant'
-    },
-    featured: true,
-    publishedAt: '2024-01-13T10:00:00Z',
-  },
-  {
-    _id: '4',
-    title: 'Mercedes C-Klasse',
-    slug: { current: 'mercedes-c-klasse' },
-    make: 'Mercedes-Benz',
-    model: 'C-Klasse',
-    year: 2018,
-    price: 25900,
-    mileage: 72000,
-    transmission: 'automatic',
-    fuelType: 'diesel',
-    power: 170,
-    color: 'Silber',
-    description: 'AMG Line, Ledersitze',
-    images: [],
-    mainImage: {
-      url: '/placeholder-car.jpg',
-      alt: 'Mercedes C-Klasse'
-    },
-    featured: false,
-    publishedAt: '2024-01-12T10:00:00Z',
-  },
-  {
-    _id: '5',
-    title: 'Opel Astra',
-    slug: { current: 'opel-astra' },
-    make: 'Opel',
-    model: 'Astra',
-    year: 2020,
-    price: 18900,
-    mileage: 55000,
-    transmission: 'manual',
-    fuelType: 'petrol',
-    power: 110,
-    color: 'Blau',
-    description: 'Gute Ausstattung, sparsam',
-    images: [],
-    mainImage: {
-      url: '/placeholder-car.jpg',
-      alt: 'Opel Astra'
-    },
-    featured: false,
-    publishedAt: '2024-01-11T10:00:00Z',
-  },
-  {
-    _id: '6',
-    title: 'Ford Focus',
-    slug: { current: 'ford-focus' },
-    make: 'Ford',
-    model: 'Focus',
-    year: 2019,
-    price: 16900,
-    mileage: 48000,
-    transmission: 'manual',
-    fuelType: 'petrol',
-    power: 125,
-    color: 'Rot',
-    description: 'Titanium Ausstattung',
-    images: [],
-    mainImage: {
-      url: '/placeholder-car.jpg',
-      alt: 'Ford Focus'
-    },
-    featured: false,
-    publishedAt: '2024-01-10T10:00:00Z',
-  },
-]
-
 export default function KaufenPage() {
   const [vehicles, setVehicles] = useState<Vehicle[]>([])
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
   const [filters, setFilters] = useState<VehicleFilters>({})
   const [sortBy, setSortBy] = useState('newest')
 
@@ -152,16 +16,19 @@ export default function KaufenPage() {
     async function fetchVehicles() {
       try {
         setLoading(true)
-        // In production, this would fetch from API
-        // const data = await fetch('/api/vehicles').then(res => res.json())
-        // setVehicles(data)
+        setError(null)
         
-        // Mock data for development
-        await new Promise(resolve => setTimeout(resolve, 500)) // Simulate loading
-        setVehicles(mockVehicles)
+        const response = await fetch('/api/vehicles')
+        if (!response.ok) {
+          throw new Error('Failed to fetch vehicles')
+        }
+        
+        const data = await response.json()
+        setVehicles(data)
       } catch (error) {
         console.error('Error fetching vehicles:', error)
-        setVehicles(mockVehicles) // Fallback to mock data
+        setError('Fehler beim Laden der Fahrzeuge. Bitte versuchen Sie es später erneut.')
+        setVehicles([]) // Fallback zu leeren Array bei Fehler
       } finally {
         setLoading(false)
       }
@@ -235,6 +102,30 @@ export default function KaufenPage() {
     )
   }
 
+  if (error) {
+    return (
+      <div className="section-padding">
+        <div className="container-custom">
+          <div className="text-center py-12">
+            <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span className="text-2xl text-red-600">⚠️</span>
+            </div>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              Fehler beim Laden
+            </h3>
+            <p className="text-gray-600 mb-6">{error}</p>
+            <button
+              onClick={() => window.location.reload()}
+              className="btn-primary"
+            >
+              Seite neu laden
+            </button>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -281,17 +172,22 @@ export default function KaufenPage() {
               <span className="text-2xl">🚗</span>
             </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-2">
-              Keine Fahrzeuge gefunden
+              {vehicles.length === 0 ? 'Noch keine Fahrzeuge verfügbar' : 'Keine Fahrzeuge gefunden'}
             </h3>
             <p className="text-gray-600 mb-6">
-              Versuchen Sie es mit anderen Suchkriterien oder schauen Sie später wieder vorbei.
+              {vehicles.length === 0 
+                ? 'Wir arbeiten daran, Ihnen die besten Fahrzeuge zu präsentieren. Schauen Sie bald wieder vorbei!'
+                : 'Versuchen Sie es mit anderen Suchkriterien oder schauen Sie später wieder vorbei.'
+              }
             </p>
-            <button
-              onClick={() => setFilters({})}
-              className="btn-primary"
-            >
-              Alle Filter zurücksetzen
-            </button>
+            {vehicles.length > 0 && (
+              <button
+                onClick={() => setFilters({})}
+                className="btn-primary"
+              >
+                Alle Filter zurücksetzen
+              </button>
+            )}
           </div>
         ) : (
           <>

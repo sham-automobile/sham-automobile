@@ -14,17 +14,36 @@ export interface Vehicle {
   power?: number
   color?: string
   description?: string
-  images: ImageAsset[]
+  images?: ImageAsset[]
   mainImage?: ImageAsset
   featured?: boolean
   publishedAt: string
+  
+  // Basis Daten
+  bodyType?: 'limousine' | 'kombi' | 'suv' | 'coupe' | 'cabrio' | 'kleinwagen' | 'van' | 'pickup'
+  doors?: number
+  
+  // Fahrzeughistorie
+  firstRegistration?: string
+  inspection?: string
+  owners?: number
+  serviceBook?: boolean
+  
+  // Technische Daten
+  powerKw?: number
+  gears?: number
+  cylinders?: number
 }
 
 export interface ImageAsset {
-  url: string
+  url?: string
   alt?: string
   width?: number
   height?: number
+  asset?: {
+    _ref: string
+    _type: string
+  }
 }
 
 export interface VehicleFilters {
@@ -65,4 +84,15 @@ export const FUEL_TYPE_LABELS = {
   hybrid: 'Hybrid',
   lpg: 'LPG',
   cng: 'CNG',
+}
+
+export const BODY_TYPE_LABELS = {
+  limousine: 'Limousine',
+  kombi: 'Kombi',
+  suv: 'SUV',
+  coupe: 'Coupé',
+  cabrio: 'Cabrio',
+  kleinwagen: 'Kleinwagen',
+  van: 'Van',
+  pickup: 'Pickup',
 }

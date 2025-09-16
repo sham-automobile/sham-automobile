@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Calendar, Gauge, Settings, Fuel } from 'lucide-react'
 import { Vehicle, FUEL_TYPE_LABELS, TRANSMISSION_LABELS } from '@/types'
+import { urlFor } from '@/lib/sanity'
 
 interface VehicleCardProps {
   vehicle: Vehicle
@@ -27,7 +28,7 @@ export default function VehicleCard({ vehicle }: VehicleCardProps) {
       <Link href={`/kaufen/${vehicle.slug.current}`}>
         <div className="relative aspect-[4/3] overflow-hidden">
           <Image
-            src="/placeholder-car.jpg"
+            src={vehicle.mainImage?.asset ? urlFor(vehicle.mainImage.asset).url() : (vehicle.mainImage?.url || '/placeholder-car.jpg')}
             alt={vehicle.mainImage?.alt || `${vehicle.make} ${vehicle.model}`}
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-300"

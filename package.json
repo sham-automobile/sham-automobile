@@ -9,17 +9,25 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "sanity:dev": "sanity dev",
+    "sanity:build": "sanity build",
+    "sanity:deploy": "sanity deploy"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@sanity/client": "^7.11.1",
+    "@sanity/image-url": "^1.2.0",
+    "@sanity/vision": "^4.8.1",
     "clsx": "^2.0.0",
     "lucide-react": "^0.468.0",
     "next": "^15.5.3",
+    "next-sanity": "^10.1.4",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-hook-form": "^7.48.0",
     "react-hot-toast": "^2.4.1",
+    "sanity": "^4.8.1",
     "styled-components": "^6.1.19",
     "tailwind-merge": "^2.0.0"
   },
