@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Phone, Mail, MapPin, Clock } from 'lucide-react'
 
 const navigation = {
@@ -32,16 +33,19 @@ export default function Footer() {
             <div className="lg:col-span-1">
               <Link href="/" className="flex items-center mb-6">
                 <div className="h-12 w-64 flex items-center justify-center overflow-hidden">
-                  <img 
+                  <Image 
                     src="/images/logo-sham-automobile.png" 
                     alt="Sham Automobile Logo" 
+                    width={256}
+                    height={80}
                     className="h-20 w-auto object-contain scale-[2.8]"
+                    priority
                   />
                 </div>
               </Link>
               <p className="text-gray-300 mb-6">
-                Ihr zuverlässiger Partner für qualitativ hochwertige Gebrauchtwagen in Langenhagen. 
-                Vertrauen, Transparenz und faire Preise stehen bei uns im Vordergrund.
+                Ihr lokaler Gebrauchtwagenhändler in Langenhagen. 
+                Faire Preise, ehrliche Beratung.
               </p>
             </div>
 

@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { Menu, X, Phone, Mail } from 'lucide-react'
@@ -60,10 +61,13 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <div className="h-12 w-64 flex items-center justify-center overflow-hidden">
-              <img 
+              <Image 
                 src="/images/logo-sham-automobile.png" 
                 alt="Sham Automobile Logo" 
+                width={256}
+                height={80}
                 className="h-20 w-auto object-contain scale-[2.8]"
+                priority
               />
             </div>
           </Link>

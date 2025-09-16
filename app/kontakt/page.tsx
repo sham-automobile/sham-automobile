@@ -63,12 +63,29 @@ export default function KontaktPage() {
 
       <div className="container-custom py-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          {/* Contact Form */}
-          <div className="lg:col-span-2">
+          {/* Left Column - Form and Map */}
+          <div className="lg:col-span-2 space-y-8">
+            {/* Contact Form */}
             <ContactForm />
+            
+            {/* Map Section - Below the form, same width */}
+            <div className="card p-6">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                So finden Sie uns
+              </h3>
+              <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden">
+                <div className="w-full h-full flex items-center justify-center">
+                  <span className="text-gray-400">Google Maps Platzhalter</span>
+                </div>
+              </div>
+              <p className="text-sm text-gray-600 mt-4">
+                Wir befinden uns direkt an der Walsroder Straße in Langenhagen, 
+                gut erreichbar mit dem Auto und öffentlichen Verkehrsmitteln.
+              </p>
+            </div>
           </div>
 
-          {/* Contact Info */}
+          {/* Right Column - Contact Info */}
           <div className="space-y-8">
             {/* Contact Details */}
             <div className="card p-6">
@@ -169,22 +186,6 @@ export default function KontaktPage() {
                   Terminvereinbarung, um Ihnen die beste Beratung zu gewährleisten.
                 </p>
               </div>
-            </div>
-
-            {/* Map */}
-            <div className="card p-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                So finden Sie uns
-              </h3>
-              <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden">
-                <div className="w-full h-full flex items-center justify-center">
-                  <span className="text-gray-400">Google Maps Platzhalter</span>
-                </div>
-              </div>
-              <p className="text-sm text-gray-600 mt-4">
-                Wir befinden uns direkt an der Walsroder Straße in Langenhagen, 
-                gut erreichbar mit dem Auto und öffentlichen Verkehrsmitteln.
-              </p>
             </div>
           </div>
         </div>

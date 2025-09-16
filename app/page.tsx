@@ -1,8 +1,9 @@
 import { Metadata } from 'next'
 import Hero from '@/components/Hero'
 import VehicleCard from '@/components/VehicleCard'
+import Testimonials from '@/components/Testimonials'
 import { Vehicle, Testimonial } from '@/types'
-import { Star, CheckCircle, Users, Award, Clock } from 'lucide-react'
+import { CheckCircle, Users, Award, Clock } from 'lucide-react'
 import Link from 'next/link'
 import { getFeaturedVehicles } from '@/lib/sanity'
 
@@ -15,8 +16,8 @@ export const metadata: Metadata = {
   },
 }
 
-// Mock testimonials (can be moved to Sanity later)
-const mockTestimonials: Testimonial[] = [
+// Testimonials (can be moved to Sanity later)
+const testimonials: Testimonial[] = [
   {
     _id: '1',
     name: 'Michael Schmidt',
@@ -27,10 +28,10 @@ const mockTestimonials: Testimonial[] = [
   },
   {
     _id: '2',
-    name: 'Sarah Müller',
+    name: 'Hemmat Djamali',
     text: 'Endlich ein Händler, dem man vertrauen kann. Transparente Preise und ehrliche Beratung. Kann ich nur empfehlen.',
     rating: 5,
-    vehicle: 'VW Golf, 2020',
+    vehicle: 'Opel Insignia, 2020',
     featured: true,
   },
   {
@@ -44,12 +45,12 @@ const mockTestimonials: Testimonial[] = [
 ]
 
 async function getTestimonials(): Promise<Testimonial[]> {
-  // Using mock data for now - can be moved to Sanity later
-  return mockTestimonials
+  // Using static data for now - can be moved to Sanity later
+  return testimonials
 }
 
 export default async function HomePage() {
-  const [featuredVehicles, testimonials] = await Promise.all([
+  const [featuredVehicles, testimonialsData] = await Promise.all([
     getFeaturedVehicles(),
     getTestimonials(),
   ])
@@ -156,42 +157,7 @@ export default async function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="section-padding bg-primary-50">
-        <div className="container-custom">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-900 mb-4">
-              Was unsere Kunden sagen
-            </h2>
-            <p className="text-xl text-primary-600 max-w-2xl mx-auto">
-              Über 500 zufriedene Kunden vertrauen auf Sham Automobile
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial) => (
-              <div key={testimonial._id} className="card p-6">
-                <div className="flex items-center mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className={`w-5 h-5 ${
-                        i < testimonial.rating ? 'text-yellow-400 fill-current' : 'text-gray-300'
-                      }`}
-                    />
-                  ))}
-                </div>
-                <p className="text-primary-600 mb-4 italic">"{testimonial.text}"</p>
-                <div>
-                  <p className="font-semibold text-primary-900">{testimonial.name}</p>
-                  {testimonial.vehicle && (
-                    <p className="text-sm text-primary-500">{testimonial.vehicle}</p>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Testimonials testimonials={testimonialsData} />
 
       {/* Why Choose Us */}
       <section className="section-padding">

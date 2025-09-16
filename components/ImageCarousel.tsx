@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import Image from 'next/image'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { ImageAsset } from '@/types'
@@ -17,7 +17,9 @@ export default function ImageCarousel({ images, mainImage, alt }: ImageCarouselP
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
 
   // Combine main image with additional images, with fallback for empty arrays
-  const allImages = mainImage ? [mainImage, ...(images || [])] : (images || [])
+  const allImages = useMemo(() => {
+    return mainImage ? [mainImage, ...(images || [])] : (images || [])
+  }, [mainImage, images])
 
   // Auto-play functionality
   useEffect(() => {
