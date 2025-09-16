@@ -1,7 +1,7 @@
 {
   "buildCommand": "npm run build:fast",
   "framework": "nextjs",
-  "installCommand": "npm ci --prefer-offline --no-audit",
+  "installCommand": "npm install",
   "functions": {
     "app/api/vehicles/route.ts": {
       "maxDuration": 10

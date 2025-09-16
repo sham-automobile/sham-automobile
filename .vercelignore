@@ -26,7 +26,7 @@ yarn-error.log*
 .DS_Store
 Thumbs.db
 
-# Sanity Studio (only include built version)
-sanity/
-sanity.cli.ts
-sanity.config.js
+# Sanity Studio - keep config files for studio to work
+# sanity/ (commented out - studio needs these files)
+# sanity.cli.ts (commented out - studio needs this)
+# sanity.config.js (commented out - studio needs this)
