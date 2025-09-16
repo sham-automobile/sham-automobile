@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import ContactForm from '@/components/ContactForm'
+import FAQAccordion from '@/components/FAQAccordion'
 import { Phone, Mail, MapPin, Clock } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -10,6 +11,25 @@ export const metadata: Metadata = {
     description: 'Kontaktieren Sie Sham Automobile in Langenhagen. Wir sind für Sie da!',
   },
 }
+
+const kontaktFAQs = [
+  {
+    question: "Wie kann ich einen Termin vereinbaren?",
+    answer: `Sie können uns telefonisch unter ${process.env.NEXT_PUBLIC_CONTACT_PHONE} erreichen oder das Kontaktformular nutzen. Wir melden uns schnellstmöglich bei Ihnen zurück.`
+  },
+  {
+    question: "Welche Unterlagen benötige ich für den Autokauf?",
+    answer: "Für den Kauf benötigen Sie Ihren Personalausweis oder Reisepass."
+  },
+  {
+    question: "Bieten Sie Finanzierungsmöglichkeiten an?",
+    answer: "Nein, wir bieten keine Finanzierungsmöglichkeiten an. Alle Fahrzeuge werden ausschließlich gegen Barzahlung oder Banküberweisung verkauft."
+  },
+  {
+    question: "Kann ich mein Auto auch am Wochenende abholen?",
+    answer: "Ja, nach vorheriger Absprache können wir auch außerhalb der regulären Öffnungszeiten individuelle Termine vereinbaren."
+  }
+]
 
 export default function KontaktPage() {
   return (
@@ -171,58 +191,10 @@ export default function KontaktPage() {
       </div>
 
       {/* FAQ Section */}
-      <div className="bg-white">
-        <div className="container-custom py-16">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-              Häufig gestellte Fragen
-            </h2>
-            
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  Wie kann ich einen Termin vereinbaren?
-                </h3>
-                <p className="text-gray-600">
-                  Sie können uns telefonisch unter {process.env.NEXT_PUBLIC_CONTACT_PHONE} 
-                  erreichen oder das Kontaktformular nutzen. Wir melden uns schnellstmöglich 
-                  bei Ihnen zurück.
-                </p>
-              </div>
-              
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  Welche Unterlagen benötige ich für den Autokauf?
-                </h3>
-                <p className="text-gray-600">
-                  Für den Kauf benötigen Sie Ihren Personalausweis oder Reisepass. 
-                  Bei Finanzierung sind zusätzlich Gehaltsnachweise und Kontoauszüge erforderlich.
-                </p>
-              </div>
-              
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  Bieten Sie Finanzierungsmöglichkeiten an?
-                </h3>
-                <p className="text-gray-600">
-                  Ja, wir arbeiten mit verschiedenen Banken zusammen und können Ihnen 
-                  attraktive Finanzierungsmöglichkeiten anbieten. Sprechen Sie uns gerne an.
-                </p>
-              </div>
-              
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  Kann ich mein Auto auch am Wochenende abholen?
-                </h3>
-                <p className="text-gray-600">
-                  Samstags sind wir bis 14:00 Uhr für Sie da. Sonntags haben wir geschlossen, 
-                  aber bei Bedarf können wir individuelle Termine vereinbaren.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <FAQAccordion 
+        title="Häufig gestellte Fragen" 
+        faqs={kontaktFAQs} 
+      />
     </div>
   )
 }

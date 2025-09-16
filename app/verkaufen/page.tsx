@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import SellerForm from '@/components/SellerForm'
+import FAQAccordion from '@/components/FAQAccordion'
 import { CheckCircle, Clock, Shield, Euro } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -10,6 +11,25 @@ export const metadata: Metadata = {
     description: 'Verkaufen Sie Ihr Auto zu einem fairen Preis bei Sham Automobile. Kostenlose Bewertung, schnelle Abwicklung und sofortige Zahlung.',
   },
 }
+
+const verkaufenFAQs = [
+  {
+    question: "Wie lange dauert die Bewertung meines Fahrzeugs?",
+    answer: "Wir prüfen den technischen Zustand, die Ausstattung und den allgemeinen Zustand Ihres Fahrzeugs gründlich und geben Ihnen ein schnellst mögliches Angebot."
+  },
+  {
+    question: "Ist die Bewertung wirklich kostenlos?",
+    answer: "Ja, die Bewertung ist vollständig kostenlos und unverbindlich. Sie gehen keine Verpflichtungen ein und können unser Angebot jederzeit ablehnen."
+  },
+  {
+    question: "Wann erhalte ich mein Geld?",
+    answer: "Bei Einigung auf einen Preis erhalten Sie Ihr Geld sofort nach Unterzeichnung des Kaufvertrags."
+  },
+  {
+    question: "Welche Unterlagen benötige ich?",
+    answer: "Sie benötigen den Fahrzeugbrief, den Fahrzeugschein, Ihren Personalausweis und eventuell vorhandene Servicehefte oder Rechnungen für Reparaturen."
+  }
+]
 
 export default function VerkaufenPage() {
   return (
@@ -202,57 +222,10 @@ export default function VerkaufenPage() {
       </div>
 
       {/* FAQ Section */}
-      <div className="bg-white">
-        <div className="container-custom py-16">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-              Häufig gestellte Fragen
-            </h2>
-            
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  Wie lange dauert die Bewertung meines Fahrzeugs?
-                </h3>
-                <p className="text-gray-600">
-                  Die Bewertung vor Ort dauert in der Regel 30-45 Minuten. Wir prüfen den technischen 
-                  Zustand, die Ausstattung und den allgemeinen Zustand Ihres Fahrzeugs gründlich.
-                </p>
-              </div>
-              
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  Ist die Bewertung wirklich kostenlos?
-                </h3>
-                <p className="text-gray-600">
-                  Ja, die Bewertung ist vollständig kostenlos und unverbindlich. Sie gehen keine 
-                  Verpflichtungen ein und können unser Angebot jederzeit ablehnen.
-                </p>
-              </div>
-              
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  Wann erhalte ich mein Geld?
-                </h3>
-                <p className="text-gray-600">
-                  Bei Einigung auf einen Preis erhalten Sie Ihr Geld sofort nach Unterzeichnung 
-                  des Kaufvertrags. Wir überweisen den Betrag direkt auf Ihr Konto.
-                </p>
-              </div>
-              
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  Welche Unterlagen benötige ich?
-                </h3>
-                <p className="text-gray-600">
-                  Sie benötigen den Fahrzeugbrief, den Fahrzeugschein, Ihren Personalausweis und 
-                  eventuell vorhandene Servicehefte oder Rechnungen für Reparaturen.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <FAQAccordion 
+        title="Häufig gestellte Fragen" 
+        faqs={verkaufenFAQs} 
+      />
     </div>
   )
 }
