@@ -123,7 +123,7 @@ export default async function VehiclePage({ params }: VehiclePageProps) {
           {/* First Section - Image Carousel and Vehicle Info */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
             {/* Image Carousel */}
-            <div className="card p-6">
+            <div className="card p-3">
               <ImageCarousel 
                 images={vehicle.images}
                 mainImage={vehicle.mainImage}
@@ -138,20 +138,16 @@ export default async function VehiclePage({ params }: VehiclePageProps) {
           </div>
 
           {/* Second Section - Detailed Information */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Main Content - Vehicle Details */}
-            <div className="lg:col-span-2">
-              <VehicleDetails vehicle={vehicle} />
-            </div>
+          <div className="space-y-8">
+            {/* Vehicle Details */}
+            <VehicleDetails vehicle={vehicle} />
 
-            {/* Sidebar - Contact Form */}
-            <div>
-              <div className="card p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                  Fahrzeug anfragen
-                </h3>
-                <ContactForm />
-              </div>
+            {/* Contact Form */}
+            <div id="contact-form" className="card p-6 scroll-mt-20">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                Fahrzeug anfragen
+              </h3>
+              <ContactForm />
             </div>
           </div>
         </div>

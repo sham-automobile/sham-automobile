@@ -62,7 +62,7 @@ export default function ImageCarousel({ images, mainImage, alt }: ImageCarouselP
   return (
     <div className="space-y-4">
       {/* Main Image Display */}
-      <div className="relative aspect-video bg-gray-200 rounded-lg overflow-hidden group">
+      <div className="relative aspect-[4/3] bg-gray-200 rounded-lg overflow-hidden group">
         <Image
           src={allImages[currentIndex]?.asset ? urlFor(allImages[currentIndex].asset).url() : (allImages[currentIndex]?.url || '/placeholder-car.jpg')}
           alt={allImages[currentIndex]?.alt || alt}
@@ -101,26 +101,28 @@ export default function ImageCarousel({ images, mainImage, alt }: ImageCarouselP
 
       {/* Thumbnail Navigation */}
       {allImages && allImages.length > 1 && (
-        <div className="grid grid-cols-4 gap-2">
-          {allImages.map((image, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`relative aspect-square rounded-lg overflow-hidden border-2 transition-all duration-200 ${
-                index === currentIndex
-                  ? 'border-primary-600 ring-2 ring-primary-200'
-                  : 'border-gray-200 hover:border-gray-300'
-              }`}
-            >
-              <Image
-                src={image.asset ? urlFor(image.asset).url() : (image.url || '/placeholder-car.jpg')}
-                alt={image.alt || alt}
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 25vw, 12.5vw"
-              />
-            </button>
-          ))}
+        <div className="relative">
+          <div className="flex gap-1 overflow-x-auto scrollbar-hide pb-2">
+            {allImages.map((image, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`relative flex-shrink-0 w-20 h-16 rounded-lg overflow-hidden border-2 transition-all duration-200 ${
+                  index === currentIndex
+                    ? 'border-primary-600 ring-2 ring-primary-200'
+                    : 'border-gray-200 hover:border-gray-300'
+                }`}
+              >
+                <Image
+                  src={image.asset ? urlFor(image.asset).url() : (image.url || '/placeholder-car.jpg')}
+                  alt={image.alt || alt}
+                  fill
+                  className="object-cover"
+                  sizes="80px"
+                />
+              </button>
+            ))}
+          </div>
         </div>
       )}
     </div>

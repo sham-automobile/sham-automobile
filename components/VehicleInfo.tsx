@@ -1,4 +1,4 @@
-import { Phone, Mail, Calendar, Gauge, Settings, Fuel } from 'lucide-react'
+import { Phone, Mail, Calendar, Gauge, Settings, Fuel, Power } from 'lucide-react'
 import { Vehicle, TRANSMISSION_LABELS, FUEL_TYPE_LABELS } from '@/types'
 
 interface VehicleInfoProps {
@@ -66,24 +66,34 @@ export default function VehicleInfo({ vehicle }: VehicleInfoProps) {
             <p className="font-semibold text-gray-900">{FUEL_TYPE_LABELS[vehicle.fuelType]}</p>
           </div>
         </div>
+        
+        {vehicle.power && (
+          <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+            <Power className="w-6 h-6 text-primary-600" />
+            <div>
+              <p className="text-sm text-gray-600">Leistung</p>
+              <p className="font-semibold text-gray-900">{vehicle.power} PS</p>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* CTA Buttons */}
       <div className="space-y-3">
         <a
           href={`tel:${process.env.NEXT_PUBLIC_CONTACT_PHONE}`}
-          className="btn-primary w-full flex items-center justify-center space-x-2"
+          className="w-full flex items-center justify-center space-x-2 bg-accent-500 hover:bg-accent-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200"
         >
           <Phone className="w-5 h-5" />
           <span>Jetzt anrufen</span>
         </a>
         
         <a
-          href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}?subject=Anfrage zu ${vehicle.make} ${vehicle.model}`}
-          className="btn-outline w-full flex items-center justify-center space-x-2"
+          href="#contact-form"
+          className="btn-primary w-full flex items-center justify-center space-x-2"
         >
           <Mail className="w-5 h-5" />
-          <span>E-Mail senden</span>
+          <span>Kontaktformular</span>
         </a>
       </div>
 

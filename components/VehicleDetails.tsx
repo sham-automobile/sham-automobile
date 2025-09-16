@@ -10,7 +10,7 @@ export default function VehicleDetails({ vehicle }: VehicleDetailsProps) {
   }
 
   const formatDate = (dateString?: string) => {
-    if (!dateString) return 'Nicht angegeben'
+    if (!dateString) return '-'
     return new Date(dateString).toLocaleDateString('de-DE')
   }
 
@@ -19,20 +19,20 @@ export default function VehicleDetails({ vehicle }: VehicleDetailsProps) {
       {/* Basis Daten */}
       <div className="card p-6">
         <h3 className="text-2xl font-bold text-gray-900 mb-6">Basis Daten</h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div>
-            <h4 className="font-semibold text-gray-900 mb-2">Fahrzeugtyp</h4>
-            <p className="text-gray-600">
-              {vehicle.bodyType ? BODY_TYPE_LABELS[vehicle.bodyType] : 'Nicht angegeben'}
-            </p>
+        <div className="space-y-3">
+          <div className="flex justify-between items-center py-2 border-b border-gray-100">
+            <span className="text-gray-600">Fahrzeugtyp</span>
+            <span className="font-semibold text-gray-900">
+              {vehicle.bodyType ? BODY_TYPE_LABELS[vehicle.bodyType] : '-'}
+            </span>
           </div>
-          <div>
-            <h4 className="font-semibold text-gray-900 mb-2">Farbe</h4>
-            <p className="text-gray-600">{vehicle.color || 'Nicht angegeben'}</p>
+          <div className="flex justify-between items-center py-2 border-b border-gray-100">
+            <span className="text-gray-600">Farbe</span>
+            <span className="font-semibold text-gray-900">{vehicle.color || '-'}</span>
           </div>
-          <div>
-            <h4 className="font-semibold text-gray-900 mb-2">Anzahl Türen</h4>
-            <p className="text-gray-600">{vehicle.doors || 'Nicht angegeben'}</p>
+          <div className="flex justify-between items-center py-2 border-b border-gray-100">
+            <span className="text-gray-600">Anzahl Türen</span>
+            <span className="font-semibold text-gray-900">{vehicle.doors || '-'}</span>
           </div>
         </div>
       </div>
@@ -40,32 +40,32 @@ export default function VehicleDetails({ vehicle }: VehicleDetailsProps) {
       {/* Fahrzeughistorie */}
       <div className="card p-6">
         <h3 className="text-2xl font-bold text-gray-900 mb-6">Fahrzeughistorie</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div>
-            <h4 className="font-semibold text-gray-900 mb-2">Kilometerstand</h4>
-            <p className="text-gray-600">{formatMileage(vehicle.mileage)}</p>
+        <div className="space-y-3">
+          <div className="flex justify-between items-center py-2 border-b border-gray-100">
+            <span className="text-gray-600">Kilometerstand</span>
+            <span className="font-semibold text-gray-900">{formatMileage(vehicle.mileage)}</span>
           </div>
-          <div>
-            <h4 className="font-semibold text-gray-900 mb-2">Erstzulassung</h4>
-            <p className="text-gray-600">{formatDate(vehicle.firstRegistration)}</p>
+          <div className="flex justify-between items-center py-2 border-b border-gray-100">
+            <span className="text-gray-600">Erstzulassung</span>
+            <span className="font-semibold text-gray-900">{formatDate(vehicle.firstRegistration)}</span>
           </div>
-          <div>
-            <h4 className="font-semibold text-gray-900 mb-2">Baujahr</h4>
-            <p className="text-gray-600">{vehicle.year}</p>
+          <div className="flex justify-between items-center py-2 border-b border-gray-100">
+            <span className="text-gray-600">Baujahr</span>
+            <span className="font-semibold text-gray-900">{vehicle.year}</span>
           </div>
-          <div>
-            <h4 className="font-semibold text-gray-900 mb-2">TÜV/Hauptuntersuchung</h4>
-            <p className="text-gray-600">{formatDate(vehicle.inspection)}</p>
+          <div className="flex justify-between items-center py-2 border-b border-gray-100">
+            <span className="text-gray-600">TÜV/Hauptuntersuchung</span>
+            <span className="font-semibold text-gray-900">{formatDate(vehicle.inspection)}</span>
           </div>
-          <div>
-            <h4 className="font-semibold text-gray-900 mb-2">Anzahl Vorbesitzer</h4>
-            <p className="text-gray-600">{vehicle.owners || 'Nicht angegeben'}</p>
+          <div className="flex justify-between items-center py-2 border-b border-gray-100">
+            <span className="text-gray-600">Anzahl Vorbesitzer</span>
+            <span className="font-semibold text-gray-900">{vehicle.owners || '-'}</span>
           </div>
-          <div>
-            <h4 className="font-semibold text-gray-900 mb-2">Serviceheft</h4>
-            <p className="text-gray-600">
-              {vehicle.serviceBook === true ? 'Vorhanden' : vehicle.serviceBook === false ? 'Nicht vorhanden' : 'Nicht angegeben'}
-            </p>
+          <div className="flex justify-between items-center py-2 border-b border-gray-100">
+            <span className="text-gray-600">Serviceheft</span>
+            <span className="font-semibold text-gray-900">
+              {vehicle.serviceBook === true ? 'Vorhanden' : vehicle.serviceBook === false ? 'Nicht vorhanden' : '-'}
+            </span>
           </div>
         </div>
       </div>
@@ -73,30 +73,30 @@ export default function VehicleDetails({ vehicle }: VehicleDetailsProps) {
       {/* Technische Daten */}
       <div className="card p-6">
         <h3 className="text-2xl font-bold text-gray-900 mb-6">Technische Daten</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div>
-            <h4 className="font-semibold text-gray-900 mb-2">Leistung (kW)</h4>
-            <p className="text-gray-600">{vehicle.powerKw || 'Nicht angegeben'}</p>
+        <div className="space-y-3">
+          <div className="flex justify-between items-center py-2 border-b border-gray-100">
+            <span className="text-gray-600">Leistung (kW)</span>
+            <span className="font-semibold text-gray-900">{vehicle.powerKw || '-'}</span>
           </div>
-          <div>
-            <h4 className="font-semibold text-gray-900 mb-2">Leistung (PS)</h4>
-            <p className="text-gray-600">{vehicle.power || 'Nicht angegeben'}</p>
+          <div className="flex justify-between items-center py-2 border-b border-gray-100">
+            <span className="text-gray-600">Leistung (PS)</span>
+            <span className="font-semibold text-gray-900">{vehicle.power || '-'}</span>
           </div>
-          <div>
-            <h4 className="font-semibold text-gray-900 mb-2">Getriebe</h4>
-            <p className="text-gray-600">{TRANSMISSION_LABELS[vehicle.transmission]}</p>
+          <div className="flex justify-between items-center py-2 border-b border-gray-100">
+            <span className="text-gray-600">Getriebe</span>
+            <span className="font-semibold text-gray-900">{TRANSMISSION_LABELS[vehicle.transmission]}</span>
           </div>
-          <div>
-            <h4 className="font-semibold text-gray-900 mb-2">Anzahl Gänge</h4>
-            <p className="text-gray-600">{vehicle.gears || 'Nicht angegeben'}</p>
+          <div className="flex justify-between items-center py-2 border-b border-gray-100">
+            <span className="text-gray-600">Anzahl Gänge</span>
+            <span className="font-semibold text-gray-900">{vehicle.gears || '-'}</span>
           </div>
-          <div>
-            <h4 className="font-semibold text-gray-900 mb-2">Anzahl Zylinder</h4>
-            <p className="text-gray-600">{vehicle.cylinders || 'Nicht angegeben'}</p>
+          <div className="flex justify-between items-center py-2 border-b border-gray-100">
+            <span className="text-gray-600">Anzahl Zylinder</span>
+            <span className="font-semibold text-gray-900">{vehicle.cylinders || '-'}</span>
           </div>
-          <div>
-            <h4 className="font-semibold text-gray-900 mb-2">Kraftstoff</h4>
-            <p className="text-gray-600">{FUEL_TYPE_LABELS[vehicle.fuelType]}</p>
+          <div className="flex justify-between items-center py-2 border-b border-gray-100">
+            <span className="text-gray-600">Kraftstoff</span>
+            <span className="font-semibold text-gray-900">{FUEL_TYPE_LABELS[vehicle.fuelType]}</span>
           </div>
         </div>
       </div>
