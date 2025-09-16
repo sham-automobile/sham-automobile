@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Allgemeine Geschäftsbedingungen',
-  description: 'AGB von Sham Automobile - Allgemeine Geschäftsbedingungen für den Kauf und Verkauf von Gebrauchtwagen',
+  description: 'AGB von Sham-Auto Mobile - Allgemeine Geschäftsbedingungen für den Kauf und Verkauf von Gebrauchtwagen',
   robots: {
     index: false,
     follow: false,
@@ -19,7 +19,7 @@ export default function AGBPage() {
             
             <div className="prose prose-lg max-w-none">
               <div className="bg-primary-50 p-6 rounded-lg mb-8">
-                <h2 className="text-2xl font-semibold text-primary-900 mb-4">Sham Automobile</h2>
+                <h2 className="text-2xl font-semibold text-primary-900 mb-4">Sham-Auto Mobile</h2>
                 <div className="space-y-2 text-primary-700">
                   <p><strong>Inhaber:</strong> Herr Sham</p>
                   <p><strong>Adresse:</strong> Walsroder Straße 237<br />30855 Langenhagen</p>
@@ -30,21 +30,21 @@ export default function AGBPage() {
 
               <h2 className="text-2xl font-semibold text-primary-900 mb-4">§ 1 Geltungsbereich</h2>
               <p className="text-primary-700 mb-6">
-                Diese Allgemeinen Geschäftsbedingungen gelten für alle Geschäfte zwischen Sham Automobile 
+                Diese Allgemeinen Geschäftsbedingungen gelten für alle Geschäfte zwischen Sham-Auto Mobile 
                 und seinen Kunden. Abweichende, entgegenstehende oder ergänzende AGB des Kunden werden nicht 
                 Vertragsbestandteil, es sei denn, ihrer Geltung wird ausdrücklich schriftlich zugestimmt.
               </p>
 
               <h2 className="text-2xl font-semibold text-primary-900 mb-4">§ 2 Vertragspartner</h2>
               <p className="text-primary-700 mb-6">
-                Vertragspartner ist Sham Automobile, vertreten durch Herrn Sham, Walsroder Straße 237, 
+                Vertragspartner ist Sham-Auto Mobile, vertreten durch Herrn Sham, Walsroder Straße 237, 
                 30855 Langenhagen. Alle Angebote und Verträge richten sich an Verbraucher und Unternehmer.
               </p>
 
               <h2 className="text-2xl font-semibold text-primary-900 mb-4">§ 3 Angebote und Vertragsschluss</h2>
               <p className="text-primary-700 mb-4">
                 <strong>3.1</strong> Alle auf der Website dargestellten Fahrzeuge sind freibleibende Angebote. 
-                Sham Automobile behält sich das Recht vor, Fahrzeuge vor Vertragsschluss zu verkaufen.
+                Sham-Auto Mobile behält sich das Recht vor, Fahrzeuge vor Vertragsschluss zu verkaufen.
               </p>
               <p className="text-primary-700 mb-4">
                 <strong>3.2</strong> Der Vertrag kommt durch schriftliche Bestätigung oder durch Übergabe des 
@@ -85,7 +85,7 @@ export default function AGBPage() {
 
               <h2 className="text-2xl font-semibold text-primary-900 mb-4">§ 6 Gewährleistung</h2>
               <p className="text-primary-700 mb-4">
-                <strong>6.1</strong> Sham Automobile gewährt auf alle verkauften Fahrzeuge eine Gewährleistung 
+                <strong>6.1</strong> Sham-Auto Mobile gewährt auf alle verkauften Fahrzeuge eine Gewährleistung 
                 nach den gesetzlichen Bestimmungen.
               </p>
               <p className="text-primary-700 mb-4">
@@ -102,13 +102,13 @@ export default function AGBPage() {
                 <li>Schäden durch unsachgemäße Reparaturen durch Dritte</li>
               </ul>
               <p className="text-primary-700 mb-6">
-                <strong>6.4</strong> Bei Gewährleistungsfällen hat Sham Automobile das Recht zur Nacherfüllung 
+                <strong>6.4</strong> Bei Gewährleistungsfällen hat Sham-Auto Mobile das Recht zur Nacherfüllung 
                 durch Reparatur oder Ersatzlieferung.
               </p>
 
               <h2 className="text-2xl font-semibold text-primary-900 mb-4">§ 7 Haftung</h2>
               <p className="text-primary-700 mb-4">
-                <strong>7.1</strong> Sham Automobile haftet nur für Schäden, die auf Vorsatz oder grober 
+                <strong>7.1</strong> Sham-Auto Mobile haftet nur für Schäden, die auf Vorsatz oder grober 
                 Fahrlässigkeit beruhen, soweit nicht zwingende gesetzliche Haftungsbestimmungen entgegenstehen.
               </p>
               <p className="text-primary-700 mb-6">
@@ -118,7 +118,7 @@ export default function AGBPage() {
 
               <h2 className="text-2xl font-semibold text-primary-900 mb-4">§ 8 Rücktritt und Widerruf</h2>
               <p className="text-primary-700 mb-4">
-                <strong>8.1</strong> Der Käufer kann vom Vertrag zurücktreten, wenn Sham Automobile in 
+                <strong>8.1</strong> Der Käufer kann vom Vertrag zurücktreten, wenn Sham-Auto Mobile in 
                 Verzug gerät und nach Fristsetzung zur Leistung diese nicht erbringt.
               </p>
               <p className="text-primary-700 mb-4">
@@ -126,20 +126,20 @@ export default function AGBPage() {
                 gesetzlichen Bestimmungen.
               </p>
               <p className="text-primary-700 mb-6">
-                <strong>8.3</strong> Bei Rücktritt oder Widerruf hat Sham Automobile das Recht, eine 
+                <strong>8.3</strong> Bei Rücktritt oder Widerruf hat Sham-Auto Mobile das Recht, eine 
                 angemessene Nutzungsentschädigung zu verlangen.
               </p>
 
               <h2 className="text-2xl font-semibold text-primary-900 mb-4">§ 9 Eigentumsvorbehalt</h2>
               <p className="text-primary-700 mb-6">
                 Das verkaufte Fahrzeug bleibt bis zur vollständigen Zahlung des Kaufpreises im Eigentum 
-                von Sham Automobile. Bei Zahlungsverzug ist Sham Automobile berechtigt, das Fahrzeug 
+                von Sham-Auto Mobile. Bei Zahlungsverzug ist Sham-Auto Mobile berechtigt, das Fahrzeug 
                 zurückzufordern.
               </p>
 
               <h2 className="text-2xl font-semibold text-primary-900 mb-4">§ 10 Datenschutz</h2>
               <p className="text-primary-700 mb-6">
-                Sham Automobile verpflichtet sich, die Bestimmungen des Bundesdatenschutzgesetzes und 
+                Sham-Auto Mobile verpflichtet sich, die Bestimmungen des Bundesdatenschutzgesetzes und 
                 der DSGVO einzuhalten. Nähere Informationen finden Sie in unserer Datenschutzerklärung.
               </p>
 
@@ -156,7 +156,7 @@ export default function AGBPage() {
                 Person des öffentlichen Rechts oder öffentlich-rechtliches Sondervermögen ist.
               </p>
               <p className="text-primary-700 mb-6">
-                <strong>11.4</strong> Sham Automobile behält sich das Recht vor, diese AGB jederzeit zu 
+                <strong>11.4</strong> Sham-Auto Mobile behält sich das Recht vor, diese AGB jederzeit zu 
                 ändern. Maßgeblich ist die zum Zeitpunkt des Vertragsschlusses gültige Fassung.
               </p>
 

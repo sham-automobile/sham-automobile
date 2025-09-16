@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Impressum',
-  description: 'Impressum von Sham Automobile - Angaben gemäß § 5 TMG',
+  description: 'Impressum von Sham-Auto Mobile - Angaben gemäß § 5 TMG',
   robots: {
     index: false,
     follow: false,
@@ -21,7 +21,7 @@ export default function ImpressumPage() {
               <h2 className="text-2xl font-semibold text-primary-900 mb-4">Angaben gemäß § 5 TMG</h2>
               
               <div className="bg-primary-50 p-6 rounded-lg mb-8">
-                <h3 className="text-xl font-semibold text-primary-900 mb-4">Sham Automobile</h3>
+                <h3 className="text-xl font-semibold text-primary-900 mb-4">Sham-Auto Mobile</h3>
                 <div className="space-y-2 text-primary-700">
                   <p><strong>Inhaber:</strong> Herr Sham</p>
                   <p><strong>Adresse:</strong> Walsroder Straße 237<br />30855 Langenhagen</p>

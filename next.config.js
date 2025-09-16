@@ -1,5 +1,21 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Build optimizations
+  experimental: {
+    optimizePackageImports: ['lucide-react'],
+  },
+  // Faster builds with Turbopack (replaces turbo)
+  turbopack: {
+    rules: {
+      '*.svg': {
+        loaders: ['@svgr/webpack'],
+        as: '*.js',
+      },
+    },
+  },
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
   images: {
     formats: ['image/webp', 'image/avif'],
     remotePatterns: [

@@ -9,8 +9,21 @@
  * https://github.com/sanity-io/next-sanity
  */
 
-import { NextStudio } from 'next-sanity/studio'
+import dynamic from 'next/dynamic'
 import config from '../../../sanity.config'
+
+// Dynamically import Sanity Studio to reduce initial bundle size
+const NextStudio = dynamic(() => import('next-sanity/studio').then(mod => ({ default: mod.NextStudio })), {
+  ssr: false,
+  loading: () => (
+    <div className="flex items-center justify-center min-h-screen">
+      <div className="text-center">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900 mx-auto mb-4"></div>
+        <p className="text-gray-600">Lade Sanity Studio...</p>
+      </div>
+    </div>
+  )
+})
 
 export default function StudioPage() {
   return <NextStudio config={config} />

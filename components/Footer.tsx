@@ -121,9 +121,14 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between">
-            <p className="text-gray-400 text-sm">
-              © 2024 Sham Automobile. Alle Rechte vorbehalten.
-            </p>
+            <div className="text-center md:text-left">
+              <p className="text-gray-400 text-sm">
+                © 2024 Sham-Auto Mobile. Alle Rechte vorbehalten.
+              </p>
+              <p className="text-gray-500 text-xs mt-1">
+                "Sham-Automobile" ist ein Marketing-Name der Sham-Auto Mobile
+              </p>
+            </div>
             <div className="flex space-x-6 mt-4 md:mt-0">
               {navigation.legal.map((item) => (
                 <Link

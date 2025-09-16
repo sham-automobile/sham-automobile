@@ -6,10 +6,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:fast": "SKIP_ENV_VALIDATION=true next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "next lint --fix",
+    "lint:check": "next lint",
     "format": "prettier --write .",
-    "type-check": "tsc --noEmit",
+    "type-check": "tsc --noEmit --incremental",
+    "type-check:watch": "tsc --noEmit --watch",
     "sanity:dev": "sanity dev",
     "sanity:build": "sanity build",
     "sanity:deploy": "sanity deploy"

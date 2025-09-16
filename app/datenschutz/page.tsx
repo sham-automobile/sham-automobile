@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Datenschutz',
-  description: 'Datenschutzerklärung von Sham Automobile - Informationen zum Umgang mit Ihren Daten',
+  description: 'Datenschutzerklärung von Sham-Auto Mobile - Informationen zum Umgang mit Ihren Daten',
   robots: {
     index: false,
     follow: false,
@@ -74,7 +74,7 @@ export default function DatenschutzPage() {
               <div className="bg-primary-50 p-6 rounded-lg mb-6">
                 <p className="text-primary-700 mb-2"><strong>Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</strong></p>
                 <p className="text-primary-700">
-                  Sham Automobile<br />
+                  Sham-Auto Mobile<br />
                   Herr Sham<br />
                   Walsroder Straße 237<br />
                   30855 Langenhagen<br />
