@@ -3,8 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import ToasterProvider from '@/components/ToasterProvider'
-import { ThemeProvider } from '@/contexts/ThemeContext'
+import ClientProviders from '@/components/ClientProviders'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -64,14 +63,13 @@ export default function RootLayout({
   return (
     <html lang="de" className="scroll-smooth">
       <body className={inter.className}>
-        <ThemeProvider>
+        <ClientProviders>
           <Header />
           <main className="min-h-screen">
             {children}
           </main>
           <Footer />
-          <ToasterProvider />
-        </ThemeProvider>
+        </ClientProviders>
       </body>
     </html>
   )
