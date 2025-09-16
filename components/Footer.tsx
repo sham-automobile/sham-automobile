@@ -84,7 +84,7 @@ export default function Footer() {
                     href={`tel:${process.env.NEXT_PUBLIC_CONTACT_PHONE}`}
                     className="text-gray-300 hover:text-white transition-colors"
                   >
-                    {process.env.NEXT_PUBLIC_CONTACT_PHONE}
+                    {process.env.NEXT_PUBLIC_CONTACT_PHONE || '+491725413020'}
                   </a>
                 </div>
                 <div className="flex items-center space-x-3">
@@ -93,7 +93,7 @@ export default function Footer() {
                     href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
                     className="text-gray-300 hover:text-white transition-colors"
                   >
-                    {process.env.NEXT_PUBLIC_CONTACT_EMAIL}
+                    {process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'info@sham-automobile.de'}
                   </a>
                 </div>
               </div>

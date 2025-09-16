@@ -196,7 +196,7 @@ export default function VerkaufenPage() {
                     href={`tel:${process.env.NEXT_PUBLIC_CONTACT_PHONE}`}
                     className="text-primary-900 hover:text-primary-700"
                   >
-                    {process.env.NEXT_PUBLIC_CONTACT_PHONE}
+                    {process.env.NEXT_PUBLIC_CONTACT_PHONE || '+491725413020'}
                   </a>
                 </div>
                 <div>
@@ -205,7 +205,7 @@ export default function VerkaufenPage() {
                     href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
                     className="text-primary-900 hover:text-primary-700"
                   >
-                    {process.env.NEXT_PUBLIC_CONTACT_EMAIL}
+                    {process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'info@sham-automobile.de'}
                   </a>
                 </div>
                 <div>

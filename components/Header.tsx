@@ -40,14 +40,14 @@ export default function Header() {
                 className="flex items-center space-x-1 hover:text-accent-300 transition-colors"
               >
                 <Phone className="w-4 h-4" />
-                <span>{process.env.NEXT_PUBLIC_CONTACT_PHONE}</span>
+                <span>{process.env.NEXT_PUBLIC_CONTACT_PHONE || '+491725413020'}</span>
               </a>
               <a 
                 href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
                 className="flex items-center space-x-1 hover:text-accent-300 transition-colors"
               >
                 <Mail className="w-4 h-4" />
-                <span>{process.env.NEXT_PUBLIC_CONTACT_EMAIL}</span>
+                <span>{process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'info@sham-automobile.de'}</span>
               </a>
             </div>
             <div className="hidden md:block">
