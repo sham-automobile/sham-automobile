@@ -18,7 +18,7 @@ const navigation = [
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const pathname = usePathname()
-  const { isDark } = useTheme()
+  const { isDark, mounted } = useTheme()
 
   // Function to check if a navigation item is active
   const isActive = (href: string) => {
@@ -64,7 +64,7 @@ export default function Header() {
           <Link href="/" className="flex items-center">
             <div className="h-12 w-64 flex items-center justify-center overflow-hidden">
               <Image 
-                src={isDark ? "/images/logo-white.png" : "/images/logo-sham-automobile.png"} 
+                src={mounted && isDark ? "/images/logo-white.png" : "/images/logo-sham-automobile.png"} 
                 alt="Sham Automobile Logo" 
                 width={256}
                 height={80}

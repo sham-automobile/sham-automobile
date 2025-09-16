@@ -13,7 +13,6 @@ const navigation = {
   legal: [
     { name: 'Impressum', href: '/impressum' },
     { name: 'Datenschutz', href: '/datenschutz' },
-    { name: 'AGB', href: '/agb' },
   ],
 }
 

@@ -21,9 +21,12 @@ export default function ContactForm() {
 
   // EmailJS initialisieren
   useEffect(() => {
+    console.log('=== EMAILJS INITIALISIERUNG ===')
     const isConfigValid = validateEmailJSConfig()
+    console.log('Config valid:', isConfigValid)
     if (isConfigValid) {
       const initialized = initEmailJS()
+      console.log('EmailJS initialized:', initialized)
       setEmailJSReady(initialized)
     } else {
       console.warn('EmailJS ist nicht konfiguriert. Formular funktioniert im Demo-Modus.')
@@ -55,14 +58,33 @@ export default function ContactForm() {
       setIsSubmitted(true)
       reset()
     } catch (error: any) {
+      console.error('=== CONTACT FORM FEHLER ===')
       console.error('Fehler beim Senden:', error)
+      console.error('Error type:', typeof error)
+      console.error('Error name:', error?.name)
+      console.error('Error message:', error?.message)
+      console.error('Error status:', error?.status)
+      console.error('Error text:', error?.text)
+      console.error('Error response:', error?.response)
+      console.error('Original error:', error?.originalError)
       
-      // Spezielle Behandlung für Rate Limit Fehler
+      // Spezielle Behandlung für verschiedene Fehlertypen
       if (error.name === 'RateLimitError') {
         const remainingTime = error.remainingTime || 60
         toast.error(`Zu viele E-Mails gesendet. Bitte warten Sie ${remainingTime} Minuten, bevor Sie erneut eine Nachricht senden.`)
+      } else if (error.name === 'EmailJSError') {
+        // Verwende die benutzerfreundliche Fehlermeldung aus der EmailJS-Funktion
+        toast.error(error.message || 'Fehler beim Senden der E-Mail. Bitte versuchen Sie es erneut.')
+      } else if (error?.status === 400) {
+        toast.error('Ungültige E-Mail-Parameter. Bitte überprüfen Sie Ihre Eingaben.')
+      } else if (error?.status === 401) {
+        toast.error('E-Mail-Service nicht autorisiert. Bitte kontaktieren Sie den Administrator.')
+      } else if (error?.status === 404) {
+        toast.error('E-Mail-Service nicht gefunden. Bitte kontaktieren Sie den Administrator.')
+      } else if (error?.status === 429) {
+        toast.error('Zu viele E-Mails gesendet. Bitte warten Sie einen Moment.')
       } else {
-        toast.error('Fehler beim Senden der Nachricht. Bitte versuchen Sie es erneut.')
+        toast.error(error?.message || 'Fehler beim Senden der Nachricht. Bitte versuchen Sie es erneut.')
       }
     } finally {
       setIsSubmitting(false)

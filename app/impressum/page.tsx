@@ -23,7 +23,7 @@ export default function ImpressumPage() {
               <div className="bg-primary-50 p-6 rounded-lg mb-8">
                 <h3 className="text-xl font-semibold text-primary-900 mb-4">Sham-Auto Mobile</h3>
                 <div className="space-y-2 text-primary-700">
-                  <p><strong>Inhaber:</strong> Herr Sham</p>
+                  <p><strong>Inhaber:</strong> Noorullah Sham</p>
                   <p><strong>Adresse:</strong> Walsroder Straße 237<br />30855 Langenhagen</p>
                   <p><strong>Telefon:</strong> <a href="tel:+491725413020" className="hover:text-accent-600">+49 172 541 30 20</a></p>
                   <p><strong>E-Mail:</strong> <a href="mailto:info@sham-automobile.de" className="hover:text-accent-600">info@sham-automobile.de</a></p>
@@ -33,12 +33,12 @@ export default function ImpressumPage() {
               <h2 className="text-2xl font-semibold text-primary-900 mb-4">Umsatzsteuer-ID</h2>
               <p className="text-primary-700 mb-6">
                 Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
-                <strong>DE123456789</strong> (Beispiel - bitte durch echte USt-ID ersetzen)
+                <strong>Kleinunternehmerregelung nach § 19 UStG</strong>
               </p>
 
               <h2 className="text-2xl font-semibold text-primary-900 mb-4">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
               <p className="text-primary-700 mb-6">
-                Herr Sham<br />
+                Noorullah Sham<br />
                 Walsroder Straße 237<br />
                 30855 Langenhagen
               </p>

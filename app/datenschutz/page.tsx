@@ -50,8 +50,14 @@ export default function DatenschutzPage() {
                 Walnut, CA 91789<br />
                 USA
                 <br /><br />
-                Die Erfassung und Verarbeitung Ihrer Daten erfolgt ausschließlich in der EU und wird von 
-                unserem Hosting-Anbieter durchgeführt. Weitere Informationen entnehmen Sie der 
+                Unsere Domain wird über IONOS verwaltet:
+                <br />
+                <strong>IONOS SE</strong><br />
+                Elgendorfer Str. 57<br />
+                56410 Montabaur<br />
+                Deutschland
+                <br /><br />
+                Die Erfassung und Verarbeitung Ihrer Daten erfolgt durch Vercel. Weitere Informationen entnehmen Sie der 
                 Datenschutzerklärung von Vercel: 
                 <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-accent-600 hover:text-accent-700">
                   https://vercel.com/legal/privacy-policy
@@ -75,7 +81,7 @@ export default function DatenschutzPage() {
                 <p className="text-primary-700 mb-2"><strong>Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</strong></p>
                 <p className="text-primary-700">
                   Sham-Auto Mobile<br />
-                  Herr Sham<br />
+                  Noorullah Sham<br />
                   Walsroder Straße 237<br />
                   30855 Langenhagen<br />
                   Deutschland<br /><br />
