@@ -145,7 +145,7 @@ export default function UeberUnsPage() {
       </div>
 
       {/* Location & Contact */}
-      <div className="section-padding bg-primary-50">
+      <div className="section-padding bg-primary-50 dark:bg-gray-900">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>

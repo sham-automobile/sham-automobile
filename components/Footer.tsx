@@ -122,7 +122,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="text-center md:text-left">
               <p className="text-gray-400 text-sm">
-                © 2024 Sham-Auto Mobile. Alle Rechte vorbehalten.
+                Sham-Auto Mobile. Alle Rechte vorbehalten.
               </p>
               <p className="text-gray-500 text-xs mt-1">
                 "Sham-Automobile" ist ein Marketing-Name der Sham-Auto Mobile
