@@ -46,10 +46,10 @@ export default function UeberUnsPage() {
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-primary-900 mb-6">
+              <h2 className="text-3xl font-bold text-primary-900 dark:text-white mb-6">
                 Unsere Geschichte
               </h2>
-              <div className="space-y-4 text-primary-600">
+              <div className="space-y-4 text-primary-600 dark:text-gray-300">
                 <p>
                   Sham Automobile wurde 2005 von mir gegründet, um einen vertrauensvollen 
                   Gebrauchtwagenhandel in Langenhagen und Umgebung aufzubauen. Mit meiner 
@@ -70,9 +70,9 @@ export default function UeberUnsPage() {
             </div>
             
             <div className="relative">
-              <div className="aspect-[4/3] bg-gray-200 rounded-xl overflow-hidden">
+              <div className="aspect-[4/3] bg-gray-200 dark:bg-gray-700 rounded-xl overflow-hidden">
                 <div className="w-full h-full flex items-center justify-center">
-                  <span className="text-gray-400 text-lg">Firmenbild Platzhalter</span>
+                  <span className="text-gray-400 dark:text-gray-500 text-lg">Firmenbild Platzhalter</span>
                 </div>
               </div>
             </div>
@@ -81,13 +81,13 @@ export default function UeberUnsPage() {
       </div>
 
       {/* Values */}
-      <div className="section-padding bg-primary-50">
+      <div className="section-padding bg-primary-50 dark:bg-gray-900">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-900 mb-4">
+            <h2 className="text-3xl font-bold text-primary-900 dark:text-white mb-4">
               Unsere Werte
             </h2>
-            <p className="text-xl text-primary-600 max-w-2xl mx-auto">
+            <p className="text-xl text-primary-600 dark:text-gray-300 max-w-2xl mx-auto">
               Was uns antreibt und wie wir arbeiten
             </p>
           </div>
@@ -97,10 +97,10 @@ export default function UeberUnsPage() {
               <div className="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Users className="w-8 h-8 text-accent-600" />
               </div>
-              <h3 className="text-xl font-semibold text-primary-900 mb-4">
+              <h3 className="text-xl font-semibold text-primary-900 dark:text-white mb-4">
                 Vertrauen
               </h3>
-              <p className="text-primary-600">
+              <p className="text-primary-600 dark:text-gray-300">
                 Ehrliche Beratung und transparente Preise schaffen Vertrauen bei unseren Kunden.
               </p>
             </div>
@@ -109,10 +109,10 @@ export default function UeberUnsPage() {
               <div className="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Award className="w-8 h-8 text-accent-600" />
               </div>
-              <h3 className="text-xl font-semibold text-primary-900 mb-4">
+              <h3 className="text-xl font-semibold text-primary-900 dark:text-white mb-4">
                 Erfahrung
               </h3>
-              <p className="text-primary-600">
+              <p className="text-primary-600 dark:text-gray-300">
                 Über 25 Jahre Erfahrung im Autohandel - seit 1999 für Ihre optimale Beratung.
               </p>
             </div>
@@ -121,10 +121,10 @@ export default function UeberUnsPage() {
               <div className="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <CheckCircle className="w-8 h-8 text-accent-600" />
               </div>
-              <h3 className="text-xl font-semibold text-primary-900 mb-4">
+              <h3 className="text-xl font-semibold text-primary-900 dark:text-white mb-4">
                 Qualität
               </h3>
-              <p className="text-primary-600">
+              <p className="text-primary-600 dark:text-gray-300">
                 Jedes Fahrzeug wird sorgfältig geprüft und ehrlich bewertet - auch bei Gebrauchtwagen steht Qualität im Vordergrund.
               </p>
             </div>
@@ -133,10 +133,10 @@ export default function UeberUnsPage() {
               <div className="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Star className="w-8 h-8 text-accent-600" />
               </div>
-              <h3 className="text-xl font-semibold text-primary-900 mb-4">
+              <h3 className="text-xl font-semibold text-primary-900 dark:text-white mb-4">
                 Service
               </h3>
-              <p className="text-primary-600">
+              <p className="text-primary-600 dark:text-gray-300">
                 Persönlicher Service und individuelle Betreuung für jeden Kunden.
               </p>
             </div>
@@ -149,15 +149,15 @@ export default function UeberUnsPage() {
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
                 Besuchen Sie uns
               </h2>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <MapPin className="w-6 h-6 text-primary-600 mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">Adresse</h3>
-                    <p className="text-gray-600">
+                    <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Adresse</h3>
+                    <p className="text-gray-600 dark:text-gray-400">
                       Walsroder Straße 237<br />
                       30855 Langenhagen
                     </p>
@@ -167,8 +167,8 @@ export default function UeberUnsPage() {
                 <div className="flex items-start space-x-4">
                   <Clock className="w-6 h-6 text-primary-600 mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">Öffnungszeiten</h3>
-                    <div className="text-gray-600 space-y-1">
+                    <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Öffnungszeiten</h3>
+                    <div className="text-gray-600 dark:text-gray-400 space-y-1">
                       <p>Montag - Freitag: 08:00 - 18:00</p>
                       <p>Samstag: 08:00 - 14:00</p>
                       <p>Sonntag: Geschlossen</p>
@@ -179,15 +179,15 @@ export default function UeberUnsPage() {
                 <div className="flex items-start space-x-4">
                   <Users className="w-6 h-6 text-primary-600 mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">Kontakt</h3>
-                    <div className="text-gray-600 space-y-1">
+                    <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Kontakt</h3>
+                    <div className="text-gray-600 dark:text-gray-400 space-y-1">
                       <p>
-                        <a href={`tel:${process.env.NEXT_PUBLIC_CONTACT_PHONE}`} className="hover:text-primary-600">
+                        <a href={`tel:${process.env.NEXT_PUBLIC_CONTACT_PHONE}`} className="hover:text-primary-600 dark:hover:text-primary-400">
                           {process.env.NEXT_PUBLIC_CONTACT_PHONE}
                         </a>
                       </p>
                       <p>
-                        <a href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`} className="hover:text-primary-600">
+                        <a href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`} className="hover:text-primary-600 dark:hover:text-primary-400">
                           {process.env.NEXT_PUBLIC_CONTACT_EMAIL}
                         </a>
                       </p>
@@ -198,7 +198,7 @@ export default function UeberUnsPage() {
             </div>
             
             <div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
                 So finden Sie uns
               </h3>
               <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden">
@@ -213,7 +213,7 @@ export default function UeberUnsPage() {
                   className="rounded-lg"
                 />
               </div>
-              <p className="text-sm text-gray-600 mt-4">
+              <p className="text-sm text-gray-600 dark:text-gray-400 mt-4">
                 Wir befinden uns direkt an der Walsroder Straße in Langenhagen, 
                 gut erreichbar mit dem Auto und öffentlichen Verkehrsmitteln. 
                 Kostenlose Parkplätze sind vor Ort verfügbar.
@@ -227,24 +227,24 @@ export default function UeberUnsPage() {
       <div className="section-padding">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
               Warum Sham Automobile?
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               Die Vorteile, die uns von anderen unterscheiden
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="card p-8">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
                 Lokale Expertise
               </h3>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
                 Als lokaler Händler kennen wir die Bedürfnisse unserer Kunden in Langenhagen 
                 und Umgebung. Wir sind vor Ort und für Sie da.
               </p>
-              <ul className="space-y-2 text-gray-600">
+              <ul className="space-y-2 text-gray-600 dark:text-gray-300">
                 <li className="flex items-center space-x-2">
                   <CheckCircle className="w-4 h-4 text-green-500" />
                   <span>Persönliche Beratung</span>
@@ -261,14 +261,14 @@ export default function UeberUnsPage() {
             </div>
             
             <div className="card p-8">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
                 Qualitätssicherung
               </h3>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
                 Jedes Fahrzeug durchläuft eine gründliche technische Prüfung. 
                 Wir bewerten ehrlich den Zustand und informieren Sie transparent über alle Details.
               </p>
-              <ul className="space-y-2 text-gray-600">
+              <ul className="space-y-2 text-gray-600 dark:text-gray-300">
                 <li className="flex items-center space-x-2">
                   <CheckCircle className="w-4 h-4 text-green-500" />
                   <span>Technische Überprüfung</span>

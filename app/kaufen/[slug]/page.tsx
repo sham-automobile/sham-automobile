@@ -105,9 +105,9 @@ export default async function VehiclePage({ params }: VehiclePageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
       
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
         {/* Breadcrumb */}
-        <div className="bg-white border-b border-gray-200">
+        <div className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
           <div className="container-custom py-4">
             <Breadcrumbs 
               items={[
@@ -144,7 +144,7 @@ export default async function VehiclePage({ params }: VehiclePageProps) {
 
             {/* Contact Form */}
             <div id="contact-form" className="card p-6 scroll-mt-20">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
                 Fahrzeug anfragen
               </h3>
               <ContactForm />

@@ -152,7 +152,7 @@ export default function SellerForm() {
         </div>
 
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
             E-Mail *
           </label>
           <input
@@ -175,7 +175,7 @@ export default function SellerForm() {
       </div>
 
       <div className="mt-6">
-        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
           Telefon *
         </label>
         <input
@@ -192,7 +192,7 @@ export default function SellerForm() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
         <div>
-          <label htmlFor="make" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="make" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
             Marke *
           </label>
           <select
@@ -211,7 +211,7 @@ export default function SellerForm() {
         </div>
 
         <div>
-          <label htmlFor="model" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="model" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
             Modell *
           </label>
           <input
@@ -229,7 +229,7 @@ export default function SellerForm() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
         <div>
-          <label htmlFor="year" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="year" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
             Baujahr *
           </label>
           <select
@@ -251,7 +251,7 @@ export default function SellerForm() {
         </div>
 
         <div>
-          <label htmlFor="mileage" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="mileage" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
             Kilometerstand *
           </label>
           <input
@@ -272,7 +272,7 @@ export default function SellerForm() {
       </div>
 
       <div className="mt-6">
-        <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-2">
+        <label htmlFor="description" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
           Beschreibung
         </label>
         <textarea
@@ -285,7 +285,7 @@ export default function SellerForm() {
       </div>
 
       <div className="mt-6">
-        <label className="block text-sm font-medium text-gray-700 mb-2">
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
           Bilder hochladen (max. 10)
         </label>
         <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
@@ -370,9 +370,9 @@ export default function SellerForm() {
         </button>
       </div>
 
-      <div className="mt-6 bg-primary-50 p-4 rounded-lg">
-        <h4 className="font-semibold text-primary-900 mb-2">Warum Sham Automobile?</h4>
-        <ul className="text-sm text-primary-800 space-y-1">
+      <div className="mt-6 bg-primary-50 dark:bg-gray-800 p-4 rounded-lg">
+        <h4 className="font-semibold text-primary-900 dark:text-white mb-2">Warum Sham Automobile?</h4>
+        <ul className="text-sm text-primary-800 dark:text-gray-300 space-y-1">
           <li>• Kostenlose und unverbindliche Bewertung</li>
           <li>• Faire Preise basierend auf aktuellen Marktwerten</li>
           <li>• Schnelle Abwicklung und sofortige Zahlung</li>

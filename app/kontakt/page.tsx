@@ -70,7 +70,7 @@ export default function KontaktPage() {
             
             {/* Map Section - Below the form, same width */}
             <div className="card p-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
                 So finden Sie uns
               </h3>
               <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden">
@@ -85,7 +85,7 @@ export default function KontaktPage() {
                   className="rounded-lg"
                 />
               </div>
-              <p className="text-sm text-gray-600 mt-4">
+              <p className="text-sm text-gray-600 dark:text-gray-400 mt-4">
                 Wir befinden uns direkt an der Walsroder Straße in Langenhagen, 
                 gut erreichbar mit dem Auto und öffentlichen Verkehrsmitteln.
               </p>
@@ -96,7 +96,7 @@ export default function KontaktPage() {
           <div className="space-y-8">
             {/* Contact Details */}
             <div className="card p-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-6">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
                 Kontaktinformationen
               </h3>
               
@@ -106,14 +106,14 @@ export default function KontaktPage() {
                     <Phone className="w-6 h-6 text-primary-600" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Telefon</h4>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-1">Telefon</h4>
                     <a 
                       href={`tel:${process.env.NEXT_PUBLIC_CONTACT_PHONE}`}
-                      className="text-primary-600 hover:text-primary-700"
+                      className="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300"
                     >
                       {process.env.NEXT_PUBLIC_CONTACT_PHONE}
                     </a>
-                    <p className="text-sm text-gray-600 mt-1">
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
                       Mo-Fr: 08:00-18:00, Sa: 08:00-14:00
                     </p>
                   </div>
@@ -124,14 +124,14 @@ export default function KontaktPage() {
                     <Mail className="w-6 h-6 text-primary-600" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">E-Mail</h4>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-1">E-Mail</h4>
                     <a 
                       href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
-                      className="text-primary-600 hover:text-primary-700"
+                      className="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300"
                     >
                       {process.env.NEXT_PUBLIC_CONTACT_EMAIL}
                     </a>
-                    <p className="text-sm text-gray-600 mt-1">
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
                       Antwort innerhalb von 24 Stunden
                     </p>
                   </div>
@@ -142,12 +142,12 @@ export default function KontaktPage() {
                     <MapPin className="w-6 h-6 text-primary-600" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Adresse</h4>
-                    <p className="text-gray-600">
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-1">Adresse</h4>
+                    <p className="text-gray-600 dark:text-gray-400">
                       Walsroder Straße 237<br />
                       30855 Langenhagen
                     </p>
-                    <p className="text-sm text-gray-600 mt-1">
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
                       Kostenlose Parkplätze verfügbar
                     </p>
                   </div>
@@ -157,7 +157,7 @@ export default function KontaktPage() {
 
             {/* Opening Hours */}
             <div className="card p-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-6">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
                 Öffnungszeiten
               </h3>
               
@@ -165,30 +165,30 @@ export default function KontaktPage() {
                 <div className="flex items-center space-x-4">
                   <Clock className="w-5 h-5 text-primary-600" />
                   <div className="flex justify-between w-full">
-                    <span className="text-gray-600">Montag - Freitag</span>
-                    <span className="font-medium text-gray-900">08:00 - 18:00</span>
+                    <span className="text-gray-600 dark:text-gray-400">Montag - Freitag</span>
+                    <span className="font-medium text-gray-900 dark:text-white">08:00 - 18:00</span>
                   </div>
                 </div>
                 
                 <div className="flex items-center space-x-4">
                   <Clock className="w-5 h-5 text-primary-600" />
                   <div className="flex justify-between w-full">
-                    <span className="text-gray-600">Samstag</span>
-                    <span className="font-medium text-gray-900">08:00 - 14:00</span>
+                    <span className="text-gray-600 dark:text-gray-400">Samstag</span>
+                    <span className="font-medium text-gray-900 dark:text-white">08:00 - 14:00</span>
                   </div>
                 </div>
                 
                 <div className="flex items-center space-x-4">
                   <Clock className="w-5 h-5 text-gray-400" />
                   <div className="flex justify-between w-full">
-                    <span className="text-gray-600">Sonntag</span>
-                    <span className="font-medium text-gray-900">Geschlossen</span>
+                    <span className="text-gray-600 dark:text-gray-400">Sonntag</span>
+                    <span className="font-medium text-gray-900 dark:text-white">Geschlossen</span>
                   </div>
                 </div>
               </div>
               
-              <div className="mt-6 p-4 bg-primary-50 rounded-lg">
-                <p className="text-sm text-primary-800">
+              <div className="mt-6 p-4 bg-primary-50 dark:bg-gray-800 rounded-lg">
+                <p className="text-sm text-primary-800 dark:text-gray-300">
                   <strong>Terminvereinbarung:</strong> Wir empfehlen eine vorherige 
                   Terminvereinbarung, um Ihnen die beste Beratung zu gewährleisten.
                 </p>

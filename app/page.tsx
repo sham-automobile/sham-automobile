@@ -104,7 +104,7 @@ export default async function HomePage() {
       </section>
 
       {/* How it works */}
-      <section className="section-padding">
+      <section className="section-padding bg-white dark:bg-gray-900">
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-primary-900 dark:text-white mb-4">
@@ -159,7 +159,7 @@ export default async function HomePage() {
       <Testimonials testimonials={testimonialsData} />
 
       {/* Why Choose Us */}
-      <section className="section-padding">
+      <section className="section-padding bg-white dark:bg-gray-900">
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-primary-900 dark:text-white mb-4">

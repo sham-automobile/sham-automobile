@@ -57,7 +57,7 @@ export default function VehicleCard({ vehicle }: VehicleCardProps) {
           </div>
           
           <div className="grid grid-cols-2 gap-4 mb-4">
-            <div className="flex items-center space-x-2 text-primary-600 dark:text-gray-300">
+            <div className="flex items-center space-x-2 text-primary-600 dark:text-gray-300">2
               <Calendar className="w-4 h-4 text-accent-500" />
               <span className="text-sm">{vehicle.year}</span>
             </div>
