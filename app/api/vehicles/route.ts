@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { getAllVehiclesUncached } from '@/lib/sanity'
+import { Vehicle } from '@/types'
 
 export async function GET(request: Request) {
   try {
@@ -11,7 +12,7 @@ export async function GET(request: Request) {
     
     if (featured === 'true') {
       // Filtere nur die empfohlenen Fahrzeuge
-      const featuredVehicles = allVehicles.filter(vehicle => vehicle.featured === true)
+      const featuredVehicles = allVehicles.filter((vehicle: Vehicle) => vehicle.featured === true)
       return NextResponse.json(featuredVehicles)
     } else {
       return NextResponse.json(allVehicles)
