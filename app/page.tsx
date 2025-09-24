@@ -177,10 +177,10 @@ export default async function HomePage() {
                 <CheckCircle className="w-8 h-8 text-accent-600" />
               </div>
               <h3 className="text-xl font-semibold text-primary-900 mb-4">
-                Qualität garantiert
+                Qualität geprüft
               </h3>
               <p className="text-primary-600">
-                Alle Fahrzeuge werden sorgfältig geprüft und mit Garantie verkauft
+                Alle Fahrzeuge werden sorgfältig geprüft und mit vollständiger Transparenz verkauft
               </p>
             </div>
             

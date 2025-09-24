@@ -35,7 +35,7 @@ export default function UeberUnsPage() {
             </h1>
             <p className="text-xl text-primary-200 max-w-2xl mx-auto">
               Ihr zuverlässiger Partner für Gebrauchtwagen in Langenhagen. 
-              Seit über 15 Jahren stehen Qualität, Vertrauen und faire Preise im Mittelpunkt unseres Handelns.
+              Seit über 25 Jahren stehen Qualität, Vertrauen und faire Preise im Mittelpunkt unseres Handelns.
             </p>
           </div>
         </div>
@@ -51,20 +51,20 @@ export default function UeberUnsPage() {
               </h2>
               <div className="space-y-4 text-primary-600">
                 <p>
-                  Sham Automobile wurde 2008 mit dem Ziel gegründet, den Gebrauchtwagenhandel 
-                  in Langenhagen und Umgebung zu revolutionieren. Was als kleiner Familienbetrieb 
-                  begann, ist heute zu einem etablierten Unternehmen mit über 500 zufriedenen 
-                  Kunden geworden.
+                  Sham Automobile wurde 2005 von mir gegründet, um einen vertrauensvollen 
+                  Gebrauchtwagenhandel in Langenhagen und Umgebung aufzubauen. Mit meiner 
+                  Erfahrung im Autohandel seit 1999 ist das Unternehmen heute ein etabliertes 
+                  Geschäft mit zufriedenen Kunden.
                 </p>
                 <p>
-                  Unser Erfolg basiert auf drei Grundpfeilern: Qualität, Transparenz und 
-                  Kundenzufriedenheit. Jedes Fahrzeug, das wir verkaufen, wird gründlich 
-                  geprüft und mit einer umfassenden Garantie ausgeliefert.
+                  Mein Erfolg basiert auf drei Grundpfeilern: Qualität, Transparenz und 
+                  Kundenzufriedenheit. Jedes Fahrzeug, das ich verkaufe, wird gründlich 
+                  geprüft und mit vollständiger Transparenz über den Zustand ausgeliefert.
                 </p>
                 <p>
-                  Wir sind stolz darauf, dass viele unserer Kunden uns weiterempfehlen und 
-                  auch bei ihrem nächsten Autokauf wieder zu uns kommen. Diese Vertrauensbasis 
-                  ist das Fundament unseres Geschäftserfolgs.
+                  Ich bin stolz darauf, dass viele meiner Kunden mich weiterempfehlen und 
+                  auch bei ihrem nächsten Autokauf wieder zu mir kommen. Diese Vertrauensbasis 
+                  ist das Fundament meines Geschäftserfolgs.
                 </p>
               </div>
             </div>
@@ -95,18 +95,6 @@ export default function UeberUnsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <CheckCircle className="w-8 h-8 text-accent-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-primary-900 mb-4">
-                Qualität
-              </h3>
-              <p className="text-primary-600">
-                Jedes Fahrzeug wird gründlich geprüft und nur in bester Qualität verkauft.
-              </p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Users className="w-8 h-8 text-accent-600" />
               </div>
               <h3 className="text-xl font-semibold text-primary-900 mb-4">
@@ -125,7 +113,19 @@ export default function UeberUnsPage() {
                 Erfahrung
               </h3>
               <p className="text-primary-600">
-                Über 15 Jahre Erfahrung im Gebrauchtwagenhandel für optimale Beratung.
+                Über 25 Jahre Erfahrung im Autohandel - seit 1999 für Ihre optimale Beratung.
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <CheckCircle className="w-8 h-8 text-accent-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-primary-900 mb-4">
+                Qualität
+              </h3>
+              <p className="text-primary-600">
+                Jedes Fahrzeug wird sorgfältig geprüft und ehrlich bewertet - auch bei Gebrauchtwagen steht Qualität im Vordergrund.
               </p>
             </div>
             
@@ -265,8 +265,8 @@ export default function UeberUnsPage() {
                 Qualitätssicherung
               </h3>
               <p className="text-gray-600 mb-4">
-                Jedes Fahrzeug durchläuft eine umfassende technische Prüfung und 
-                wird nur in bester Qualität verkauft.
+                Jedes Fahrzeug durchläuft eine gründliche technische Prüfung. 
+                Wir bewerten ehrlich den Zustand und informieren Sie transparent über alle Details.
               </p>
               <ul className="space-y-2 text-gray-600">
                 <li className="flex items-center space-x-2">
@@ -279,7 +279,7 @@ export default function UeberUnsPage() {
                 </li>
                 <li className="flex items-center space-x-2">
                   <CheckCircle className="w-4 h-4 text-green-500" />
-                  <span>12 Monate Garantie</span>
+                  <span>Vollständige Transparenz</span>
                 </li>
               </ul>
             </div>

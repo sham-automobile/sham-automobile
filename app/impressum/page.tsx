@@ -24,6 +24,7 @@ export default function ImpressumPage() {
                 <h3 className="text-xl font-semibold text-primary-900 mb-4">Sham-Auto Mobile</h3>
                 <div className="space-y-2 text-primary-700">
                   <p><strong>Inhaber:</strong> Noorullah Sham</p>
+                  <p><strong>Berufsbezeichnung:</strong> Gebrauchtwagenhändler</p>
                   <p><strong>Adresse:</strong> Walsroder Straße 237<br />30855 Langenhagen</p>
                   <p><strong>Telefon:</strong> <a href="tel:+491725413020" className="hover:text-accent-600">+49 172 541 30 20</a></p>
                   <p><strong>E-Mail:</strong> <a href="mailto:info@sham-automobile.de" className="hover:text-accent-600">info@sham-automobile.de</a></p>

@@ -147,12 +147,21 @@ export default function FilterBar({
                   className="input text-sm"
                 >
                   <option value="">Kein Limit</option>
+                  <option value="1000">1.000 €</option>
+                  <option value="2000">2.000 €</option>
+                  <option value="3000">3.000 €</option>
+                  <option value="4000">4.000 €</option>
                   <option value="5000">5.000 €</option>
+                  <option value="6000">6.000 €</option>
+                  <option value="7000">7.000 €</option>
+                  <option value="8000">8.000 €</option>
+                  <option value="9000">9.000 €</option>
                   <option value="10000">10.000 €</option>
+                  <option value="11000">11.000 €</option>
+                  <option value="12000">12.000 €</option>
+                  <option value="13000">13.000 €</option>
+                  <option value="14000">14.000 €</option>
                   <option value="15000">15.000 €</option>
-                  <option value="20000">20.000 €</option>
-                  <option value="30000">30.000 €</option>
-                  <option value="50000">50.000 €</option>
                 </select>
               </div>
 
@@ -362,10 +371,21 @@ export default function FilterBar({
                   className="input text-sm"
                 >
                   <option value="">Kein Limit</option>
+                  <option value="1000">1.000 €</option>
+                  <option value="2000">2.000 €</option>
+                  <option value="3000">3.000 €</option>
+                  <option value="4000">4.000 €</option>
+                  <option value="5000">5.000 €</option>
+                  <option value="6000">6.000 €</option>
+                  <option value="7000">7.000 €</option>
+                  <option value="8000">8.000 €</option>
+                  <option value="9000">9.000 €</option>
                   <option value="10000">10.000 €</option>
-                  <option value="20000">20.000 €</option>
-                  <option value="30000">30.000 €</option>
-                  <option value="50000">50.000 €</option>
+                  <option value="11000">11.000 €</option>
+                  <option value="12000">12.000 €</option>
+                  <option value="13000">13.000 €</option>
+                  <option value="14000">14.000 €</option>
+                  <option value="15000">15.000 €</option>
                 </select>
               </div>
 

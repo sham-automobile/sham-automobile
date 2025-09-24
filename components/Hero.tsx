@@ -43,11 +43,11 @@ export default function Hero() {
           
           <div className="mt-12 flex items-center justify-center space-x-8 text-primary-200">
             <div className="text-center">
-              <div className="text-3xl font-bold text-white">500+</div>
+              <div className="text-3xl font-bold text-white">100%</div>
               <div className="text-sm">Zufriedene Kunden</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-white">15+</div>
+              <div className="text-3xl font-bold text-white">25+</div>
               <div className="text-sm">Jahre Erfahrung</div>
             </div>
             <div className="text-center">

@@ -1,0 +1,46 @@
+# Notizen - Sham Automobile
+
+## Projekt Notizen
+
+### Datum: $(date)
+
+### Allgemeine Notizen:
+- 
+
+### To-Do Liste:
+- 
+
+### Ideen:
+- 
+
+### Probleme/Issues:
+- 
+
+### Wichtige Links:
+- 
+
+---
+*Diese Datei wurde automatisch erstellt. Fügen Sie hier Ihre Notizen hinzu.*
+
+1. Firmeninformationen
+[ ] Gründungsjahr bestätigen: Aktuell steht "2008" - ist das korrekt? 
+2005
+[ ] Anzahl zufriedener Kunden: Aktuell steht "500+" - tatsächliche Zahl?
+Ändern zu immer zufriedene Kunden, 100% zufriedene Kunden
+[ ] Jahre der Erfahrung: Aktuell steht "15+" - genaue Anzahl?
+25+
+
+2. Kundenstimmen (Testimonials)
+[ ] 3-5 echte Kundenstimmen mit:
+Vollständiger Name
+Bewertungstext (2-3 Sätze)
+Fahrzeug (Marke, Modell, Jahr)
+5-Sterne-Bewertung
+
+3. Bilder & Medien
+[ ] Firmenbild/Logo für Über-uns-Seite (hochauflösend, mind. 800x600px)
+[ ] Bild von Ihnen/Team (optional, für Über-uns-Seite)
+
+4. Legal pages
+[ ] Umsatzsteuer-ID => kein Kleinunternehmner sondern wahrscheinlich Einzelunternehmer
+[ ] Datenschutz und Impressum überprüfen
