@@ -117,6 +117,15 @@ export const queries = {
   allModels: `array::unique(*[_type == "vehicle"].model) | order(@ asc)`,
 }
 
+// Ungcachte Funktionen für API Routes (sofortige Updates)
+export async function getAllVehiclesUncached() {
+  return await client.fetch(queries.allVehicles)
+}
+
+export async function getFeaturedVehiclesUncached() {
+  return await client.fetch(queries.featuredVehicles)
+}
+
 // API Functions
 export async function getAllVehicles() {
   return await unstable_cache(
