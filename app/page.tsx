@@ -20,27 +20,26 @@ export const metadata: Metadata = {
 const testimonials: Testimonial[] = [
   {
     _id: '1',
-    name: 'Michael Schmidt',
-    text: 'Sehr professionelle Beratung und faire Preise. Mein Auto wurde schnell und unkompliziert verkauft. Gerne wieder!',
+    name: 'Fabian S.',
+    text: 'Ausgezeichnete Beratung und sehr kompetente Unterstützung. Der Service war professionell und die Kommunikation transparent. Absolut empfehlenswert!',
     rating: 5,
-    vehicle: 'BMW 3er, 2018',
     featured: true,
   },
   {
     _id: '2',
-    name: 'Hemmat Djamali',
-    text: 'Endlich ein Händler, dem man vertrauen kann. Transparente Preise und ehrliche Beratung. Kann ich nur empfehlen.',
+    name: 'Leon K.',
+    text: 'Sehr kompetent und persönlich. Der Inhaber hat sich viel Zeit genommen und alle Fragen ausführlich beantwortet.',
     rating: 5,
-    vehicle: 'Opel Insignia, 2020',
     featured: true,
   },
   {
     _id: '3',
-    name: 'Thomas Weber',
-    text: 'Schnelle Abwicklung, fairer Preis. Das Team war sehr kompetent und hat alle Fragen beantwortet.',
+    name: 'AutoScout24',
+    text: 'Bewertet mit 5 Sternen auf AutoScout24. Zahlreiche zufriedene Kunden vertrauen auf unsere Qualität und Zuverlässigkeit.',
     rating: 5,
-    vehicle: 'Audi A4, 2019',
     featured: true,
+    isExternal: true,
+    externalUrl: 'https://www.autoscout24.de/haendler/sham-auto-mobile',
   },
 ]
 

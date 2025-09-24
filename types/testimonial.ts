@@ -7,6 +7,8 @@ export interface Testimonial {
   rating: number
   vehicle?: string
   featured?: boolean
+  isExternal?: boolean
+  externalUrl?: string
 }
 
 export interface SellerLead {

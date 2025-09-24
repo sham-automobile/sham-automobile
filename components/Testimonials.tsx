@@ -1,5 +1,6 @@
-import { Star } from 'lucide-react'
+import { Star, ExternalLink } from 'lucide-react'
 import { Testimonial } from '@/types'
+import Link from 'next/link'
 
 interface TestimonialsProps {
   testimonials: Testimonial[]
@@ -12,7 +13,7 @@ interface TestimonialsProps {
 export default function Testimonials({ 
   testimonials, 
   title = "Was unsere Kunden sagen",
-  subtitle = "Über 500 zufriedene Kunden vertrauen auf Sham Automobile",
+  subtitle = "Vertrauen Sie auf unsere langjährige Erfahrung im Gebrauchtwagenhandel",
   showAll = false,
   maxItems = 3
 }: TestimonialsProps) {
@@ -52,8 +53,8 @@ interface TestimonialCardProps {
 }
 
 function TestimonialCard({ testimonial }: TestimonialCardProps) {
-  return (
-    <div className="card p-6 h-full flex flex-col">
+  const cardContent = (
+    <div className="card p-6 h-full flex flex-col hover:scale-105 transition-transform duration-200">
       {/* Rating Stars */}
       <div className="flex items-center mb-4">
         {[...Array(5)].map((_, i) => (
@@ -75,11 +76,32 @@ function TestimonialCard({ testimonial }: TestimonialCardProps) {
       
       {/* Customer Info */}
       <div className="mt-auto">
-        <p className="font-semibold text-primary-900">{testimonial.name}</p>
+        <div className="flex items-center justify-between">
+          <p className="font-semibold text-primary-900">{testimonial.name}</p>
+          {testimonial.isExternal && (
+            <ExternalLink className="w-4 h-4 text-primary-500" />
+          )}
+        </div>
         {testimonial.vehicle && (
           <p className="text-sm text-primary-500">{testimonial.vehicle}</p>
         )}
       </div>
     </div>
   )
+
+  // If it's an external testimonial, wrap in a link
+  if (testimonial.isExternal && testimonial.externalUrl) {
+    return (
+      <Link 
+        href={testimonial.externalUrl} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="block"
+      >
+        {cardContent}
+      </Link>
+    )
+  }
+
+  return cardContent
 }
