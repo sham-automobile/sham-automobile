@@ -1,3 +1,6 @@
+'use client'
+
+import { useState, useEffect } from 'react'
 import { Metadata } from 'next'
 import Hero from '@/components/Hero'
 import VehicleCard from '@/components/VehicleCard'
@@ -5,16 +8,8 @@ import Testimonials from '@/components/Testimonials'
 import { Vehicle, Testimonial } from '@/types'
 import { CheckCircle, Users, Award, Clock } from 'lucide-react'
 import Link from 'next/link'
-import { getFeaturedVehicles } from '@/lib/sanity'
 
-export const metadata: Metadata = {
-  title: 'Gebrauchtwagen kaufen und verkaufen in Langenhagen',
-  description: 'Sham Automobile - Ihr zuverlässiger Partner für Gebrauchtwagen in Langenhagen. Qualität, Vertrauen und faire Preise. Jetzt Auto kaufen oder verkaufen!',
-  openGraph: {
-    title: 'Gebrauchtwagen kaufen und verkaufen in Langenhagen',
-    description: 'Sham Automobile - Ihr zuverlässiger Partner für Gebrauchtwagen in Langenhagen. Qualität, Vertrauen und faire Preise.',
-  },
-}
+// Metadata wird jetzt in layout.tsx oder über Head Component gesetzt
 
 // Testimonials (can be moved to Sanity later)
 const testimonials: Testimonial[] = [
@@ -48,11 +43,39 @@ async function getTestimonials(): Promise<Testimonial[]> {
   return testimonials
 }
 
-export default async function HomePage() {
-  const [featuredVehicles, testimonialsData] = await Promise.all([
-    getFeaturedVehicles(),
-    getTestimonials(),
-  ])
+export default function HomePage() {
+  const [featuredVehicles, setFeaturedVehicles] = useState<Vehicle[]>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+
+  useEffect(() => {
+    async function fetchFeaturedVehicles() {
+      try {
+        setLoading(true)
+        setError(null)
+        
+        const response = await fetch('/api/vehicles')
+        if (!response.ok) {
+          throw new Error('Failed to fetch vehicles')
+        }
+        
+        const allVehicles = await response.json()
+        // Filtere nur die empfohlenen Fahrzeuge
+        const featured = allVehicles.filter((vehicle: Vehicle) => vehicle.featured === true)
+        setFeaturedVehicles(featured)
+      } catch (error) {
+        console.error('Error fetching featured vehicles:', error)
+        setError('Fehler beim Laden der empfohlenen Fahrzeuge.')
+        setFeaturedVehicles([])
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchFeaturedVehicles()
+  }, [])
+
+  const testimonialsData = testimonials
 
   return (
     <>
@@ -70,7 +93,28 @@ export default async function HomePage() {
             </p>
           </div>
           
-          {featuredVehicles.length > 0 ? (
+          {loading ? (
+            <div className="text-center py-12">
+              <div className="w-8 h-8 border-4 border-primary-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+              <p className="text-gray-600 dark:text-gray-300">Empfohlene Fahrzeuge werden geladen...</p>
+            </div>
+          ) : error ? (
+            <div className="text-center py-12">
+              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl text-red-600">⚠️</span>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                Fehler beim Laden
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-6">{error}</p>
+              <button
+                onClick={() => window.location.reload()}
+                className="btn-primary"
+              >
+                Seite neu laden
+              </button>
+            </div>
+          ) : featuredVehicles.length > 0 ? (
             <>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                 {featuredVehicles.map((vehicle: Vehicle) => (
