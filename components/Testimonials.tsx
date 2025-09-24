@@ -85,6 +85,11 @@ function TestimonialCard({ testimonial }: TestimonialCardProps) {
         {testimonial.vehicle && (
           <p className="text-sm text-primary-500 dark:text-primary-400">{testimonial.vehicle}</p>
         )}
+        {testimonial.isExternal && (
+          <p className="text-xs text-primary-400 dark:text-primary-500 mt-1">
+            Klicken Sie hier, für weitere Bewertungen
+          </p>
+        )}
       </div>
     </div>
   )

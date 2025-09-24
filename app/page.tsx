@@ -29,7 +29,7 @@ const testimonials: Testimonial[] = [
   },
   {
     _id: '3',
-    name: 'AutoScout24',
+    name: 'AutoScout24 Bewertungen',
     text: 'Bewertet mit 5 Sternen auf AutoScout24. Zahlreiche zufriedene Kunden vertrauen auf unsere Qualität und Zuverlässigkeit.',
     rating: 5,
     featured: true,
