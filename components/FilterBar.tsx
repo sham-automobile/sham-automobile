@@ -70,14 +70,14 @@ export default function FilterBar({
   const hasActiveFilters = Object.values(filters).some(value => value !== undefined && value !== '')
 
   return (
-    <div className="bg-white border-b border-gray-200">
+    <div className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
       <div className="container-custom">
         {/* Mobile Header */}
         <div className="lg:hidden py-4">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center space-x-2">
-              <Filter className="w-5 h-5 text-gray-700" />
-              <span className="text-gray-700 font-medium">Filter</span>
+              <Filter className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+              <span className="text-gray-700 dark:text-gray-300 font-medium">Filter</span>
               {hasActiveFilters && (
                 <span className="bg-primary-600 text-white text-xs px-2 py-1 rounded-full">
                   {Object.values(filters).filter(v => v !== undefined && v !== '').length}
@@ -89,7 +89,7 @@ export default function FilterBar({
               <select
                 value={sortBy}
                 onChange={(e) => onSortChange(e.target.value)}
-                className="text-sm border border-gray-300 rounded px-3 py-1"
+                className="text-sm border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded px-3 py-1"
               >
                 {SORT_OPTIONS.map(option => (
                   <option key={option.value} value={option.value}>
@@ -107,7 +107,7 @@ export default function FilterBar({
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
               {/* Make */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Marke
                 </label>
                 <select
@@ -124,7 +124,7 @@ export default function FilterBar({
 
               {/* Model */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Modell
                 </label>
                 <input
@@ -138,7 +138,7 @@ export default function FilterBar({
 
               {/* Price Range */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Preis bis
                 </label>
                 <select
@@ -167,7 +167,7 @@ export default function FilterBar({
 
               {/* Year */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Baujahr ab
                 </label>
                 <select
@@ -184,7 +184,7 @@ export default function FilterBar({
 
               {/* Fuel Type */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Kraftstoff
                 </label>
                 <select
@@ -201,7 +201,7 @@ export default function FilterBar({
 
               {/* Sort */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Sortierung
                 </label>
                 <select
@@ -221,9 +221,9 @@ export default function FilterBar({
             {hasActiveFilters && (
               <div className="mt-4 flex items-center justify-between">
                 <div className="flex items-center space-x-2 flex-wrap">
-                  <span className="text-sm text-gray-600">Aktive Filter:</span>
+                  <span className="text-sm text-gray-600 dark:text-gray-400">Aktive Filter:</span>
                   {filters.make && (
-                    <span className="bg-primary-100 text-primary-800 px-2 py-1 rounded text-sm flex items-center space-x-1">
+                    <span className="bg-primary-100 dark:bg-gray-700 text-primary-800 dark:text-gray-200 px-2 py-1 rounded text-sm flex items-center space-x-1">
                       {filters.make}
                       <button
                         onClick={() => clearIndividualFilter('make')}
@@ -234,7 +234,7 @@ export default function FilterBar({
                     </span>
                   )}
                   {filters.model && (
-                    <span className="bg-primary-100 text-primary-800 px-2 py-1 rounded text-sm flex items-center space-x-1">
+                    <span className="bg-primary-100 dark:bg-gray-700 text-primary-800 dark:text-gray-200 px-2 py-1 rounded text-sm flex items-center space-x-1">
                       {filters.model}
                       <button
                         onClick={() => clearIndividualFilter('model')}
@@ -245,7 +245,7 @@ export default function FilterBar({
                     </span>
                   )}
                   {filters.fuelType && (
-                    <span className="bg-primary-100 text-primary-800 px-2 py-1 rounded text-sm flex items-center space-x-1">
+                    <span className="bg-primary-100 dark:bg-gray-700 text-primary-800 dark:text-gray-200 px-2 py-1 rounded text-sm flex items-center space-x-1">
                       {filters.fuelType}
                       <button
                         onClick={() => clearIndividualFilter('fuelType')}
@@ -256,7 +256,7 @@ export default function FilterBar({
                     </span>
                   )}
                   {filters.maxPrice && (
-                    <span className="bg-primary-100 text-primary-800 px-2 py-1 rounded text-sm flex items-center space-x-1">
+                    <span className="bg-primary-100 dark:bg-gray-700 text-primary-800 dark:text-gray-200 px-2 py-1 rounded text-sm flex items-center space-x-1">
                       bis {filters.maxPrice.toLocaleString()} €
                       <button
                         onClick={() => clearIndividualFilter('maxPrice')}
@@ -267,7 +267,7 @@ export default function FilterBar({
                     </span>
                   )}
                   {filters.minPrice && (
-                    <span className="bg-primary-100 text-primary-800 px-2 py-1 rounded text-sm flex items-center space-x-1">
+                    <span className="bg-primary-100 dark:bg-gray-700 text-primary-800 dark:text-gray-200 px-2 py-1 rounded text-sm flex items-center space-x-1">
                       ab {filters.minPrice.toLocaleString()} €
                       <button
                         onClick={() => clearIndividualFilter('minPrice')}
@@ -278,7 +278,7 @@ export default function FilterBar({
                     </span>
                   )}
                   {filters.minYear && (
-                    <span className="bg-primary-100 text-primary-800 px-2 py-1 rounded text-sm flex items-center space-x-1">
+                    <span className="bg-primary-100 dark:bg-gray-700 text-primary-800 dark:text-gray-200 px-2 py-1 rounded text-sm flex items-center space-x-1">
                       ab {filters.minYear}
                       <button
                         onClick={() => clearIndividualFilter('minYear')}
@@ -289,7 +289,7 @@ export default function FilterBar({
                     </span>
                   )}
                   {filters.maxMileage && (
-                    <span className="bg-primary-100 text-primary-800 px-2 py-1 rounded text-sm flex items-center space-x-1">
+                    <span className="bg-primary-100 dark:bg-gray-700 text-primary-800 dark:text-gray-200 px-2 py-1 rounded text-sm flex items-center space-x-1">
                       bis {filters.maxMileage.toLocaleString()} km
                       <button
                         onClick={() => clearIndividualFilter('maxMileage')}
@@ -300,7 +300,7 @@ export default function FilterBar({
                     </span>
                   )}
                   {filters.transmission && (
-                    <span className="bg-primary-100 text-primary-800 px-2 py-1 rounded text-sm flex items-center space-x-1">
+                    <span className="bg-primary-100 dark:bg-gray-700 text-primary-800 dark:text-gray-200 px-2 py-1 rounded text-sm flex items-center space-x-1">
                       {TRANSMISSIONS.find(t => t.value === filters.transmission)?.label}
                       <button
                         onClick={() => clearIndividualFilter('transmission')}
@@ -313,7 +313,7 @@ export default function FilterBar({
                 </div>
                 <button
                   onClick={clearFilters}
-                  className="text-sm text-primary-600 hover:text-primary-700 flex items-center space-x-1"
+                  className="text-sm text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 flex items-center space-x-1"
                 >
                   <X className="w-4 h-4" />
                   <span>Alle Filter löschen</span>
@@ -324,11 +324,11 @@ export default function FilterBar({
         </div>
 
         {/* Mobile Filters Panel - Always Visible */}
-        <div className="lg:hidden border-t border-gray-200 py-4">
+        <div className="lg:hidden border-t border-gray-200 dark:border-gray-700 py-4">
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Marke
                 </label>
                 <select
@@ -344,7 +344,7 @@ export default function FilterBar({
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Kraftstoff
                 </label>
                 <select
@@ -362,7 +362,7 @@ export default function FilterBar({
 
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Preis bis
                 </label>
                 <select
@@ -390,7 +390,7 @@ export default function FilterBar({
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Baujahr ab
                 </label>
                 <select

@@ -28,10 +28,10 @@ export default function FAQAccordion({ title, faqs, className = '' }: FAQAccordi
   }
 
   return (
-    <div className={`bg-white ${className}`}>
+    <div className={`bg-white dark:bg-gray-900 ${className}`}>
       <div className="container-custom py-16">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white text-center mb-12">
             {title}
           </h2>
           
@@ -42,14 +42,14 @@ export default function FAQAccordion({ title, faqs, className = '' }: FAQAccordi
               return (
                 <div 
                   key={index}
-                  className="border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200"
+                  className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200"
                 >
                   <button
                     onClick={() => toggleItem(index)}
-                    className="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-inset"
+                    className="w-full px-6 py-4 text-left bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-inset"
                   >
                     <div className="flex items-center justify-between">
-                      <h3 className="text-lg font-semibold text-gray-900 pr-4">
+                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white pr-4">
                         {faq.question}
                       </h3>
                       <div className="flex-shrink-0">
@@ -68,8 +68,8 @@ export default function FAQAccordion({ title, faqs, className = '' }: FAQAccordi
                     }`}
                   >
                     <div className="px-6 pb-4">
-                      <div className="pt-2 border-t border-gray-100">
-                        <p className="text-gray-600 leading-relaxed">
+                      <div className="pt-2 border-t border-gray-100 dark:border-gray-700">
+                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                           {faq.answer}
                         </p>
                       </div>

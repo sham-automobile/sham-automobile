@@ -53,9 +53,9 @@ export default function ImageCarousel({ images, mainImage, alt }: ImageCarouselP
 
   if (!allImages || allImages.length === 0) {
     return (
-      <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden">
+      <div className="aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden">
         <div className="w-full h-full flex items-center justify-center">
-          <span className="text-gray-400 text-lg">Kein Bild verfügbar</span>
+          <span className="text-gray-400 dark:text-gray-500 text-lg">Kein Bild verfügbar</span>
         </div>
       </div>
     )
@@ -64,7 +64,7 @@ export default function ImageCarousel({ images, mainImage, alt }: ImageCarouselP
   return (
     <div className="space-y-4">
       {/* Main Image Display */}
-      <div className="relative aspect-[4/3] bg-gray-200 rounded-lg overflow-hidden group">
+      <div className="relative aspect-[4/3] bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden group">
         <Image
           src={allImages[currentIndex]?.asset ? urlFor(allImages[currentIndex].asset).url() : (allImages[currentIndex]?.url || '/placeholder-car.jpg')}
           alt={allImages[currentIndex]?.alt || alt}
@@ -112,7 +112,7 @@ export default function ImageCarousel({ images, mainImage, alt }: ImageCarouselP
                 className={`relative flex-shrink-0 w-20 h-16 rounded-lg overflow-hidden border-2 transition-all duration-200 ${
                   index === currentIndex
                     ? 'border-primary-600 ring-2 ring-primary-200'
-                    : 'border-gray-200 hover:border-gray-300'
+                    : 'border-gray-200 dark:border-gray-600 hover:border-gray-300 dark:hover:border-gray-500'
                 }`}
               >
                 <Image

@@ -95,7 +95,7 @@ export default function KaufenPage() {
         <div className="container-custom">
           <div className="text-center">
             <div className="w-8 h-8 border-4 border-primary-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-            <p className="text-gray-600">Fahrzeuge werden geladen...</p>
+            <p className="text-gray-600 dark:text-gray-300">Fahrzeuge werden geladen...</p>
           </div>
         </div>
       </div>
@@ -110,10 +110,10 @@ export default function KaufenPage() {
             <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <span className="text-2xl text-red-600">⚠️</span>
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
               Fehler beim Laden
             </h3>
-            <p className="text-gray-600 mb-6">{error}</p>
+            <p className="text-gray-600 dark:text-gray-300 mb-6">{error}</p>
             <button
               onClick={() => window.location.reload()}
               className="btn-primary"
@@ -127,7 +127,7 @@ export default function KaufenPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
       {/* Header */}
       <div className="gradient-hero text-white relative overflow-hidden">
         {/* Background Image */}
@@ -168,13 +168,13 @@ export default function KaufenPage() {
       <div className="container-custom py-8">
         {filteredAndSortedVehicles.length === 0 ? (
           <div className="text-center py-12">
-            <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-4">
               <span className="text-2xl">🚗</span>
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
               {vehicles.length === 0 ? 'Noch keine Fahrzeuge verfügbar' : 'Keine Fahrzeuge gefunden'}
             </h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-gray-600 dark:text-gray-300 mb-6">
               {vehicles.length === 0 
                 ? 'Wir arbeiten daran, Ihnen die besten Fahrzeuge zu präsentieren. Schauen Sie bald wieder vorbei!'
                 : 'Versuchen Sie es mit anderen Suchkriterien oder schauen Sie später wieder vorbei.'
@@ -192,7 +192,7 @@ export default function KaufenPage() {
         ) : (
           <>
             <div className="mb-6">
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-gray-300">
                 {filteredAndSortedVehicles.length} Fahrzeug{filteredAndSortedVehicles.length !== 1 ? 'e' : ''} gefunden
               </p>
             </div>

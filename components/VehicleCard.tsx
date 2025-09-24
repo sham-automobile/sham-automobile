@@ -43,43 +43,43 @@ export default function VehicleCard({ vehicle }: VehicleCardProps) {
           )}
           
           {/* Price Badge */}
-          <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm text-primary-900 px-3 py-1 rounded-full text-lg font-bold shadow-sm">
+          <div className="absolute top-4 right-4 bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm text-primary-900 dark:text-gray-100 px-3 py-1 rounded-full text-lg font-bold shadow-sm">
             {formatPrice(vehicle.price)}
           </div>
         </div>
         
         <div className="p-6">
           <div className="mb-4">
-            <h3 className="text-xl font-semibold text-primary-900 mb-1">
+            <h3 className="text-xl font-semibold text-primary-900 dark:text-white mb-1">
               {vehicle.make} {vehicle.model}
             </h3>
-            <p className="text-primary-600">{vehicle.title}</p>
+            <p className="text-primary-600 dark:text-gray-300">{vehicle.title}</p>
           </div>
           
           <div className="grid grid-cols-2 gap-4 mb-4">
-            <div className="flex items-center space-x-2 text-primary-600">
+            <div className="flex items-center space-x-2 text-primary-600 dark:text-gray-300">
               <Calendar className="w-4 h-4 text-accent-500" />
               <span className="text-sm">{vehicle.year}</span>
             </div>
             
-            <div className="flex items-center space-x-2 text-primary-600">
+            <div className="flex items-center space-x-2 text-primary-600 dark:text-gray-300">
               <Gauge className="w-4 h-4 text-accent-500" />
               <span className="text-sm">{formatMileage(vehicle.mileage)}</span>
             </div>
             
-            <div className="flex items-center space-x-2 text-primary-600">
+            <div className="flex items-center space-x-2 text-primary-600 dark:text-gray-300">
               <Settings className="w-4 h-4 text-accent-500" />
               <span className="text-sm">{TRANSMISSION_LABELS[vehicle.transmission]}</span>
             </div>
             
-            <div className="flex items-center space-x-2 text-primary-600">
+            <div className="flex items-center space-x-2 text-primary-600 dark:text-gray-300">
               <Fuel className="w-4 h-4 text-accent-500" />
               <span className="text-sm">{FUEL_TYPE_LABELS[vehicle.fuelType]}</span>
             </div>
           </div>
           
           <div className="flex items-center justify-between">
-            <div className="text-2xl font-bold text-primary-700">
+            <div className="text-2xl font-bold text-primary-700 dark:text-white">
               {formatPrice(vehicle.price)}
             </div>
             

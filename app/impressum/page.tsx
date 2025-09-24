@@ -34,7 +34,7 @@ export default function ImpressumPage() {
               <h2 className="text-2xl font-semibold text-primary-900 mb-4">Umsatzsteuer-ID</h2>
               <p className="text-primary-700 mb-6">
                 Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
-                <strong>Kleinunternehmerregelung nach § 19 UStG</strong>
+                <strong>DE253537933</strong>
               </p>
 
               <h2 className="text-2xl font-semibold text-primary-900 mb-4">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>

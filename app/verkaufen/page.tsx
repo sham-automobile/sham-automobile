@@ -33,7 +33,7 @@ const verkaufenFAQs = [
 
 export default function VerkaufenPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
       {/* Header */}
       <div className="gradient-hero text-white relative overflow-hidden">
         {/* Background Image */}

@@ -95,10 +95,10 @@ export default function ContactForm() {
     return (
       <div className="card p-8 text-center">
         <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-        <h3 className="text-xl font-semibold text-gray-900 mb-2">
+        <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
           Nachricht gesendet!
         </h3>
-        <p className="text-gray-600 mb-6">
+        <p className="text-gray-600 dark:text-gray-300 mb-6">
           Vielen Dank für Ihre Nachricht. Wir werden uns schnellstmöglich bei Ihnen melden.
         </p>
         <button
@@ -113,13 +113,13 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="card p-8">
-      <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+      <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
         Kontaktieren Sie uns
       </h3>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
             Name *
           </label>
           <input
@@ -135,7 +135,7 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
             E-Mail *
           </label>
           <input
@@ -158,7 +158,7 @@ export default function ContactForm() {
       </div>
 
       <div className="mt-6">
-        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
           Telefon
         </label>
         <input
@@ -171,7 +171,7 @@ export default function ContactForm() {
       </div>
 
       <div className="mt-6">
-        <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+        <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
           Betreff *
         </label>
         <input
@@ -187,7 +187,7 @@ export default function ContactForm() {
       </div>
 
       <div className="mt-6">
-        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+        <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
           Nachricht *
         </label>
         <textarea
@@ -234,7 +234,7 @@ export default function ContactForm() {
         </button>
       </div>
 
-      <p className="mt-4 text-sm text-gray-500 text-center">
+      <p className="mt-4 text-sm text-gray-500 dark:text-gray-400 text-center">
         Mit dem Absenden stimmen Sie zu, dass Ihre Daten zur Bearbeitung Ihrer Anfrage verwendet werden.
       </p>
     </form>

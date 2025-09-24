@@ -99,16 +99,16 @@ export default function SellerForm() {
     return (
       <div className="card p-8 text-center">
         <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-        <h3 className="text-2xl font-semibold text-gray-900 mb-2">
+        <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-2">
           Anfrage gesendet!
         </h3>
-        <p className="text-gray-600 mb-6">
+        <p className="text-gray-600 dark:text-gray-300 mb-6">
           Vielen Dank für Ihre Verkaufsanfrage. Wir werden Ihr Fahrzeug bewerten und uns 
           innerhalb von 24 Stunden bei Ihnen melden.
         </p>
-        <div className="bg-primary-50 p-4 rounded-lg mb-6">
-          <h4 className="font-semibold text-primary-900 mb-2">Nächste Schritte:</h4>
-          <ul className="text-sm text-primary-800 space-y-1">
+        <div className="bg-primary-50 dark:bg-gray-800 p-4 rounded-lg mb-6">
+          <h4 className="font-semibold text-primary-900 dark:text-white mb-2">Nächste Schritte:</h4>
+          <ul className="text-sm text-primary-800 dark:text-gray-300 space-y-1">
             <li>• Wir bewerten Ihr Fahrzeug anhand der Angaben</li>
             <li>• Terminvereinbarung für eine Besichtigung</li>
             <li>• Faire Preisbewertung vor Ort</li>
@@ -129,14 +129,14 @@ export default function SellerForm() {
     <form onSubmit={handleSubmit(onSubmit)} className="card p-8">
       <div className="flex items-center space-x-3 mb-6">
         <Car className="w-8 h-8 text-primary-600" />
-        <h3 className="text-2xl font-semibold text-gray-900">
+        <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">
           Auto verkaufen - Kostenlose Bewertung
         </h3>
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
             Name *
           </label>
           <input

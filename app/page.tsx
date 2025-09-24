@@ -59,13 +59,13 @@ export default async function HomePage() {
       <Hero />
       
       {/* Featured Vehicles */}
-      <section className="section-padding bg-primary-50">
+      <section className="section-padding bg-primary-50 dark:bg-gray-900">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary-900 dark:text-white mb-4">
               Unsere Empfehlungen
             </h2>
-            <p className="text-xl text-primary-600 max-w-2xl mx-auto">
+            <p className="text-xl text-primary-600 dark:text-gray-300 max-w-2xl mx-auto">
               Entdecken Sie unsere sorgfältig ausgewählten Gebrauchtwagen in bester Qualität
             </p>
           </div>
@@ -86,13 +86,13 @@ export default async function HomePage() {
             </>
           ) : (
             <div className="text-center py-12">
-              <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🚗</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
                 Bald verfügbar
               </h3>
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-600 dark:text-gray-300 mb-6">
                 Wir arbeiten daran, Ihnen die besten Fahrzeuge zu präsentieren.
               </p>
               <Link href="/kaufen" className="btn-accent">
@@ -107,47 +107,47 @@ export default async function HomePage() {
       <section className="section-padding">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary-900 dark:text-white mb-4">
               So einfach geht's
             </h2>
-            <p className="text-xl text-primary-600 max-w-2xl mx-auto">
+            <p className="text-xl text-primary-600 dark:text-gray-300 max-w-2xl mx-auto">
               In nur 3 Schritten zu Ihrem Traumauto oder fairem Verkaufspreis
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-accent-100 dark:bg-accent-900/20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-2xl font-bold text-accent-600">1</span>
               </div>
-              <h3 className="text-xl font-semibold text-primary-900 mb-4">
+              <h3 className="text-xl font-semibold text-primary-900 dark:text-white mb-4">
                 Fahrzeug finden oder bewerten lassen
               </h3>
-              <p className="text-primary-600">
+              <p className="text-primary-600 dark:text-gray-300">
                 Durchsuchen Sie unsere Auswahl oder lassen Sie Ihr Auto kostenlos bewerten
               </p>
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-accent-100 dark:bg-accent-900/20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-2xl font-bold text-accent-600">2</span>
               </div>
-              <h3 className="text-xl font-semibold text-primary-900 mb-4">
+              <h3 className="text-xl font-semibold text-primary-900 dark:text-white mb-4">
                 Termin vereinbaren
               </h3>
-              <p className="text-primary-600">
+              <p className="text-primary-600 dark:text-gray-300">
                 Besichtigen Sie das Fahrzeug oder lassen Sie Ihr Auto vor Ort bewerten
               </p>
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-accent-100 dark:bg-accent-900/20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-2xl font-bold text-accent-600">3</span>
               </div>
-              <h3 className="text-xl font-semibold text-primary-900 mb-4">
+              <h3 className="text-xl font-semibold text-primary-900 dark:text-white mb-4">
                 Vertrag abschließen
               </h3>
-              <p className="text-primary-600">
+              <p className="text-primary-600 dark:text-gray-300">
                 Faire Preise, transparente Abwicklung und sofortige Zahlung
               </p>
             </div>
@@ -162,29 +162,29 @@ export default async function HomePage() {
       <section className="section-padding">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary-900 dark:text-white mb-4">
               Warum Sham Automobile?
             </h2>
-            <p className="text-xl text-primary-600 max-w-2xl mx-auto">
+            <p className="text-xl text-primary-600 dark:text-gray-300 max-w-2xl mx-auto">
               Über 15 Jahre Erfahrung im Gebrauchtwagenhandel
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-accent-100 dark:bg-accent-900/20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <CheckCircle className="w-8 h-8 text-accent-600" />
               </div>
-              <h3 className="text-xl font-semibold text-primary-900 mb-4">
+              <h3 className="text-xl font-semibold text-primary-900 dark:text-white mb-4">
                 Qualität geprüft
               </h3>
-              <p className="text-primary-600">
+              <p className="text-primary-600 dark:text-gray-300">
                 Alle Fahrzeuge werden sorgfältig geprüft und mit vollständiger Transparenz verkauft
               </p>
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-accent-100 dark:bg-accent-900/20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Users className="w-8 h-8 text-accent-600" />
               </div>
               <h3 className="text-xl font-semibold text-primary-900 mb-4">
@@ -196,7 +196,7 @@ export default async function HomePage() {
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-accent-100 dark:bg-accent-900/20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Award className="w-8 h-8 text-accent-600" />
               </div>
               <h3 className="text-xl font-semibold text-primary-900 mb-4">
@@ -208,7 +208,7 @@ export default async function HomePage() {
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-accent-100 dark:bg-accent-900/20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Clock className="w-8 h-8 text-accent-600" />
               </div>
               <h3 className="text-xl font-semibold text-primary-900 mb-4">

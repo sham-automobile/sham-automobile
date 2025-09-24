@@ -22,57 +22,57 @@ export default function VehicleInfo({ vehicle }: VehicleInfoProps) {
     <div className="space-y-6">
       {/* Title and Price */}
       <div>
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">
+        <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
           {vehicle.make} {vehicle.model}
         </h1>
-        <p className="text-xl text-gray-600 mb-4">{vehicle.title}</p>
+        <p className="text-xl text-gray-600 dark:text-gray-300 mb-4">{vehicle.title}</p>
         
-        <div className="text-4xl font-bold text-primary-600 mb-2">
+        <div className="text-4xl font-bold text-primary-600 dark:text-primary-400 mb-2">
           {formatPrice(vehicle.price)}
         </div>
-        <p className="text-gray-600">Unverbindlicher Preis</p>
+        <p className="text-gray-600 dark:text-gray-400">Unverbindlicher Preis</p>
       </div>
 
       {/* Key Information */}
       <div className="grid grid-cols-2 gap-4">
-        <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+        <div className="flex items-center space-x-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
           <Calendar className="w-6 h-6 text-primary-600" />
           <div>
-            <p className="text-sm text-gray-600">Baujahr</p>
-            <p className="font-semibold text-gray-900">{vehicle.year}</p>
+            <p className="text-sm text-gray-600 dark:text-gray-400">Baujahr</p>
+            <p className="font-semibold text-gray-900 dark:text-white">{vehicle.year}</p>
           </div>
         </div>
         
-        <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+        <div className="flex items-center space-x-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
           <Gauge className="w-6 h-6 text-primary-600" />
           <div>
-            <p className="text-sm text-gray-600">Kilometerstand</p>
-            <p className="font-semibold text-gray-900">{formatMileage(vehicle.mileage)}</p>
+            <p className="text-sm text-gray-600 dark:text-gray-400">Kilometerstand</p>
+            <p className="font-semibold text-gray-900 dark:text-white">{formatMileage(vehicle.mileage)}</p>
           </div>
         </div>
         
-        <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+        <div className="flex items-center space-x-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
           <Settings className="w-6 h-6 text-primary-600" />
           <div>
-            <p className="text-sm text-gray-600">Getriebe</p>
-            <p className="font-semibold text-gray-900">{TRANSMISSION_LABELS[vehicle.transmission]}</p>
+            <p className="text-sm text-gray-600 dark:text-gray-400">Getriebe</p>
+            <p className="font-semibold text-gray-900 dark:text-white">{TRANSMISSION_LABELS[vehicle.transmission]}</p>
           </div>
         </div>
         
-        <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+        <div className="flex items-center space-x-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
           <Fuel className="w-6 h-6 text-primary-600" />
           <div>
-            <p className="text-sm text-gray-600">Kraftstoff</p>
-            <p className="font-semibold text-gray-900">{FUEL_TYPE_LABELS[vehicle.fuelType]}</p>
+            <p className="text-sm text-gray-600 dark:text-gray-400">Kraftstoff</p>
+            <p className="font-semibold text-gray-900 dark:text-white">{FUEL_TYPE_LABELS[vehicle.fuelType]}</p>
           </div>
         </div>
         
         {vehicle.power && (
-          <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+          <div className="flex items-center space-x-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
             <Power className="w-6 h-6 text-primary-600" />
             <div>
-              <p className="text-sm text-gray-600">Leistung</p>
-              <p className="font-semibold text-gray-900">{vehicle.power} PS</p>
+            <p className="text-sm text-gray-600 dark:text-gray-400">Leistung</p>
+            <p className="font-semibold text-gray-900 dark:text-white">{vehicle.power} PS</p>
             </div>
           </div>
         )}

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function UeberUnsPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-gray-950">
       {/* Hero Section */}
       <div className="gradient-hero text-white relative overflow-hidden">
         {/* Background Image */}

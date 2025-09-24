@@ -27,13 +27,13 @@ export default function Testimonials({
   }
 
   return (
-    <section className="section-padding bg-primary-50">
+    <section className="section-padding bg-primary-50 dark:bg-gray-900">
       <div className="container-custom">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary-900 dark:text-white mb-4">
             {title}
           </h2>
-          <p className="text-xl text-primary-600 max-w-2xl mx-auto">
+          <p className="text-xl text-primary-600 dark:text-gray-300 max-w-2xl mx-auto">
             {subtitle}
           </p>
         </div>
@@ -70,20 +70,20 @@ function TestimonialCard({ testimonial }: TestimonialCardProps) {
       </div>
       
       {/* Testimonial Text */}
-      <blockquote className="text-primary-600 mb-4 italic flex-grow">
+      <blockquote className="text-primary-600 dark:text-gray-300 mb-4 italic flex-grow">
         "{testimonial.text}"
       </blockquote>
       
       {/* Customer Info */}
       <div className="mt-auto">
         <div className="flex items-center justify-between">
-          <p className="font-semibold text-primary-900">{testimonial.name}</p>
+          <p className="font-semibold text-primary-900 dark:text-white">{testimonial.name}</p>
           {testimonial.isExternal && (
             <ExternalLink className="w-4 h-4 text-primary-500" />
           )}
         </div>
         {testimonial.vehicle && (
-          <p className="text-sm text-primary-500">{testimonial.vehicle}</p>
+          <p className="text-sm text-primary-500 dark:text-primary-400">{testimonial.vehicle}</p>
         )}
       </div>
     </div>
