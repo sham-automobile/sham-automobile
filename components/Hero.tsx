@@ -1,15 +1,19 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, Car, DollarSign } from 'lucide-react'
 
 export default function Hero() {
   return (
     <section className="relative gradient-hero text-white overflow-hidden h-[calc(100vh-100px)]">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
-        style={{
-          backgroundImage: 'url(/images/img2.jpg)'
-        }}
+      {/* Background Image - Optimized for LCP */}
+      <Image
+        src="/images/img2.jpg"
+        alt="Gebrauchtwagen bei Sham Automobile"
+        fill
+        priority
+        fetchPriority="high"
+        className="object-cover opacity-30"
+        sizes="100vw"
       />
       
       {/* Background Overlay */}
