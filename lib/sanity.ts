@@ -1,5 +1,6 @@
-import { createClient } from '@sanity/client'
+import { createClient } from 'next-sanity'
 import imageUrlBuilder from '@sanity/image-url'
+import { unstable_cache } from 'next/cache'
 
 // Sanity Client Configuration
 export const client = createClient({
@@ -118,15 +119,27 @@ export const queries = {
 
 // API Functions
 export async function getAllVehicles() {
-  return await client.fetch(queries.allVehicles)
+  return await unstable_cache(
+    () => client.fetch(queries.allVehicles),
+    ['all-vehicles'],
+    { revalidate: 300 }
+  )()
 }
 
 export async function getVehicleBySlug(slug: string) {
-  return await client.fetch(queries.vehicleBySlug, { slug })
+  return await unstable_cache(
+    () => client.fetch(queries.vehicleBySlug, { slug }),
+    ['vehicle', slug],
+    { revalidate: 300 }
+  )()
 }
 
 export async function getFeaturedVehicles() {
-  return await client.fetch(queries.featuredVehicles)
+  return await unstable_cache(
+    () => client.fetch(queries.featuredVehicles),
+    ['featured-vehicles'],
+    { revalidate: 60 } // Cache für 1 Minute statt 5
+  )()
 }
 
 export async function getAllMakes() {
