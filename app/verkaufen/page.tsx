@@ -108,7 +108,7 @@ export default function VerkaufenPage() {
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">Vertrauen & Sicherheit</h4>
                     <p className="text-gray-600 text-sm">
-                      Über 15 Jahre Erfahrung und über 500 zufriedene Kunden in der Region.
+                      Über 20 Jahre Erfahrung und nur zufriedene Kunden in der Region.
                     </p>
                   </div>
                 </div>

@@ -210,7 +210,7 @@ export default function HomePage() {
               Warum Sham Automobile?
             </h2>
             <p className="text-xl text-primary-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Über 15 Jahre Erfahrung im Gebrauchtwagenhandel
+              Über 20 Jahre Erfahrung im Gebrauchtwagenhandel
             </p>
           </div>
           

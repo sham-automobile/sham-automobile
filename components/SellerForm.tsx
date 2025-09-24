@@ -376,7 +376,7 @@ export default function SellerForm() {
           <li>• Kostenlose und unverbindliche Bewertung</li>
           <li>• Faire Preise basierend auf aktuellen Marktwerten</li>
           <li>• Schnelle Abwicklung und sofortige Zahlung</li>
-          <li>• Über 15 Jahre Erfahrung im Gebrauchtwagenhandel</li>
+          <li>• Über 20 Jahre Erfahrung im Gebrauchtwagenhandel</li>
         </ul>
       </div>
     </form>

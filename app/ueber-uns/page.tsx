@@ -4,7 +4,7 @@ import { Users, Award, MapPin, Clock, CheckCircle, Star } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Über uns - Sham Automobile Langenhagen',
-  description: 'Erfahren Sie mehr über Sham Automobile, Ihren zuverlässigen Gebrauchtwagenhändler in Langenhagen. Über 15 Jahre Erfahrung, Qualität und Vertrauen.',
+  description: 'Erfahren Sie mehr über Sham Automobile, Ihren zuverlässigen Gebrauchtwagenhändler in Langenhagen. Über 20 Jahre Erfahrung, Qualität und Vertrauen.',
   openGraph: {
     title: 'Über uns - Sham Automobile Langenhagen',
     description: 'Erfahren Sie mehr über Sham Automobile, Ihren zuverlässigen Gebrauchtwagenhändler in Langenhagen.',
@@ -35,7 +35,7 @@ export default function UeberUnsPage() {
             </h1>
             <p className="text-xl text-primary-200 max-w-2xl mx-auto">
               Ihr zuverlässiger Partner für Gebrauchtwagen in Langenhagen. 
-              Seit über 25 Jahren stehen Qualität, Vertrauen und faire Preise im Mittelpunkt unseres Handelns.
+              Seit über 20 Jahren stehen Qualität, Vertrauen und faire Preise im Mittelpunkt unseres Handelns.
             </p>
           </div>
         </div>
@@ -113,7 +113,7 @@ export default function UeberUnsPage() {
                 Erfahrung
               </h3>
               <p className="text-primary-600 dark:text-gray-300">
-                Über 25 Jahre Erfahrung im Autohandel - seit 1999 für Ihre optimale Beratung.
+                Über 20 Jahre Erfahrung im Autohandel - seit 2005 für Ihre optimale Beratung.
               </p>
             </div>
             

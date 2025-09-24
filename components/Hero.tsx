@@ -47,7 +47,7 @@ export default function Hero() {
               <div className="text-sm">Zufriedene Kunden</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-white">25+</div>
+              <div className="text-3xl font-bold text-white">20+</div>
               <div className="text-sm">Jahre Erfahrung</div>
             </div>
             <div className="text-center">
