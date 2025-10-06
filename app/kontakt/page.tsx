@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import ContactForm from '@/components/ContactForm'
+import GoogleMaps from '@/components/GoogleMaps'
 import FAQAccordion from '@/components/FAQAccordion'
 import { Phone, Mail, MapPin, Clock } from 'lucide-react'
 
@@ -73,18 +74,11 @@ export default function KontaktPage() {
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
                 So finden Sie uns
               </h3>
-              <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden">
-                <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2430.867891800124!2d9.73654837680028!3d52.46341994041689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b073ea176cef35%3A0x9526149df9045ffe!2sSham-Auto%20Mobile!5e0!3m2!1sde!2sde!4v1758029533336!5m2!1sde!2sde" 
-                  width="100%" 
-                  height="100%" 
-                  style={{ border: 0 }} 
-                  allowFullScreen 
-                  loading="lazy" 
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="rounded-lg"
-                />
-              </div>
+              <GoogleMaps 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2430.867891800124!2d9.73654837680028!3d52.46341994041689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b073ea176cef35%3A0x9526149df9045ffe!2sSham-Auto%20Mobile!5e0!3m2!1sde!2sde!4v1758029533336!5m2!1sde!2sde"
+                title="Sham Automobile Standort"
+                className="aspect-video rounded-lg"
+              />
               <p className="text-sm text-gray-600 dark:text-gray-400 mt-4">
                 Wir befinden uns direkt an der Walsroder Straße in Langenhagen, 
                 gut erreichbar mit dem Auto und öffentlichen Verkehrsmitteln.
