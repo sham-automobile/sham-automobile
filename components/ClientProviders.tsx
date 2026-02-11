@@ -3,7 +3,7 @@
 import { ThemeProvider } from '@/contexts/ThemeContext'
 import { CookieProvider } from '@/contexts/CookieContext'
 import ToasterProvider from '@/components/ToasterProvider'
-import CookieBanner from '@/components/CookieBanner'
+// import CookieBanner from '@/components/CookieBanner'
 
 export default function ClientProviders({ children }: { children: React.ReactNode }) {
   return (
@@ -11,7 +11,7 @@ export default function ClientProviders({ children }: { children: React.ReactNod
       <CookieProvider>
         {children}
         <ToasterProvider />
-        <CookieBanner />
+        {/* <CookieBanner /> */}
       </CookieProvider>
     </ThemeProvider>
   )
